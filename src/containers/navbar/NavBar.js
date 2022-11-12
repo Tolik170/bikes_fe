@@ -20,7 +20,7 @@ import NavigationIcons from '../navigation-icons/NavigationIcons'
 
 const Navbar = () => {
   const { t } = useTranslation()
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [, setIsSidebarOpen] = useState(false)
   const navigationItems = Object.values(routesPath.navBar)
 
 
