@@ -9,8 +9,9 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 // import configureStore from './store/store';
 
-import './index.css'
+import './styles/index.css'
 import 'react-toastify/dist/ReactToastify.css'
+import './i18n'
 // import { clearLocalStorage } from './services/local-storage.service';
 // import { clearSessionStorage } from './services/session-storage.service';
 // import { HORONDI } from './configs';

@@ -1,10 +1,9 @@
 import Box from '@mui/material/Box'
-
-// import AppHeader from '~/containers/layout/app-header/AppHeader'
+import AppHeader from '../app-header/AppHeader'
 import AppMain from '../app-main/AppMain'
 // import ScrollToTopButton from '~/components/scroll-to-top-button/ScrollToTopButton'
 // import Footer from '~/containers/layout/footer/Footer'
-// import ScrollToTop from '~/components/scroll-to-top/ScrollToTop'
+import ScrollToTop from '../../components/scroll-to-top/ScrollToTop'
 
 const styles = {
   content: {
@@ -25,8 +24,8 @@ const styles = {
 const AppContent = () => {
   return (
     <Box sx={ styles.content }>
-      { /* <AppHeader />
-      <ScrollToTop /> */ }
+      <AppHeader />
+      <ScrollToTop />
       <AppMain />
       { /* <ScrollToTopButton />
       <Footer /> */ }
