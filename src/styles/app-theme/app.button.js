@@ -26,6 +26,10 @@ const button = {
       backgroundColor: palette.primary[900],
       color: palette.primary[50]
     },
+    light: {
+      color: palette.basic.black,
+      backgroundColor: palette.basic.grey
+    },
     outlined: {
       color: palette.primary[900]
     },

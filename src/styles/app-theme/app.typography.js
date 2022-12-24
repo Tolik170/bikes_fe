@@ -15,7 +15,7 @@ const appTypography = {
   h3: {
     fontWeight: 500,
     fontSize: '49px',
-    lineHeight: '74px'
+    lineHeight: '55px'
   },
   h4: {
     fontWeight: 500,

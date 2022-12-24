@@ -1,5 +1,6 @@
 export const routesPath = {
-  home: { route: '/', nested: '//*' },
+  home: { route: '/', nested: '//' },
+  catalog: { route: '/catalog' },
   navBar: {
     bikes: { label: 'bikes', route: '/#bikes' },
     electricBikes: { label: 'electricBikes', route: '/#electric-Bikes' },
