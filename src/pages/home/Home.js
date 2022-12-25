@@ -12,7 +12,6 @@ const Home = () => {
         <ConstructorPreview />
         <ModelsList />
         <OurLooks /> */ }
-        Hello
       </Box>
     </Box>
   )
