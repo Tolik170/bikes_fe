@@ -3,5 +3,9 @@
     "title": "The All-New Diverge STR",
     "getStarted": "Shop Now",
     "learnMore": "Learn More"
+  },
+  "popularItems": {
+    "title": "Popular Items",
+    "seeAllProducts": "See All Products"
   }
 }

@@ -10,7 +10,7 @@ const en = {
     iconsTooltip,
     homePage,
     footer,
-    cookiePolicyPage
+    cookiePolicyPage,
   }
 }
 

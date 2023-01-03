@@ -22,6 +22,7 @@ export const styles = {
     backgroundImage: {
       width: '100%',
       height: '100%',
+      maxHeight: '750px',
       md: `url(${backgroundImage}), ${gradient})`,
       sm: `url(${backgroundImage}), ${gradient})`,
       xs: `url(${backgroundImage}), ${gradient})`
