@@ -7,5 +7,23 @@
   "popularItems": {
     "title": "Popular Items",
     "seeAllProducts": "See All Products"
+  },
+  "featuresBlock": {
+    "suspensionCalculator": {
+      "title": "Suspension Calculator",
+      "description": "Our Suspension Calculator makes setting up your suspension super easy. All you have to do is add your height, weight, and Specialized bike model, and you'll get all the info you need to take your ride to the next level."
+    },
+    "missionControl": {
+      "title": "Mission Control",
+      "description": "Customize your motor characteristics with Support, Peak Power, and more tunable features. With Diagnose you can get an overview of your bike’s motor, system, and battery health, all at your fingertips. Includes user guidance with bike errors."
+    },
+    "rideApp": {
+      "title": "Ride App",
+      "description": "Browse nearby rides led by cyclists in your community. Find the perfect ride, based on time, type, effort and distance. Plan an upcoming ride and invite others to join in the fun. You can decide if it’s public or private. Check the ride message board to stay up to date on pre-ride gossip and last minute route changes."
+    },
+    "testTheBest": {
+      "title": "Test The Best",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+    }
   }
 }

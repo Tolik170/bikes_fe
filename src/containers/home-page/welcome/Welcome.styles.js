@@ -15,14 +15,13 @@ export const styles = {
     alignItems: 'start',
     padding: '0 100px',
     minHeight: {
-      md: '670px',
-      sm: '319px',
-      xs: '404px'
+      md: '800px',
+      sm: '500px',
+      xs: '400px'
     },
+    maxHeight: '800px',
     backgroundImage: {
       width: '100%',
-      height: '100%',
-      maxHeight: '750px',
       md: `url(${backgroundImage}), ${gradient})`,
       sm: `url(${backgroundImage}), ${gradient})`,
       xs: `url(${backgroundImage}), ${gradient})`
