@@ -26,7 +26,8 @@ export const styles = {
     p: '20px 30px 0px 30px',
     '&:hover': {
       boxShadow: commonHoverShadow,
-      cursor: 'pointer'
+      cursor: 'pointer',
+      transform: 'scale(1.05, 1.05)'
     }
   },
   cardImg: {
