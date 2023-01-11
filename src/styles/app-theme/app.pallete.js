@@ -7,7 +7,7 @@ const palette = {
   basic: {
     black: '#000000',
     white: '#FFFFFF',
-    grey: '#ECEFF1'
+    grey: '#E6EBED'
   },
   companyBlue: 'rgba(0, 167, 167, 0.2)',
   error: {
