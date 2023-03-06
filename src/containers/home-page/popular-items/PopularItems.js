@@ -5,6 +5,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 
 import TitleWithDescription from '../../../components/title-with-description/TitleWithDescription'
+import ClickableCard from '../../../components/clickable-card/ClickableCard'
 
 import { popularItemsMock } from './PopularItemsCards'
 import { styles } from './PopularItems.styles'
@@ -12,21 +13,12 @@ import { styles } from './PopularItems.styles'
 const PopularItems = () => {
   const { t } = useTranslation()
 
-  const cards = popularItemsMock.map((item, index) => {
+  const cards = popularItemsMock.map((item) => {
     return (
-      <Box key={ index } sx={ styles.cardWrapper }>
-        <Box
-          alt={ item.title } component='img' src={ item.image }
-          sx={ styles.cardImg }
-        />
-
-        <TitleWithDescription
-          description={ item.price }
-          descriptionStyles={ styles.cardDescription }
-          title={ item.title }
-          titleStyles={ styles.cardTitle }
-        />
-      </Box>
+      <ClickableCard
+        image={ item.image } key={ item.title } name={ item.title }
+        price={ item.price } 
+      />
     )
   })
 
