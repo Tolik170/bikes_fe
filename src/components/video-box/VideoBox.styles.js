@@ -1,4 +1,7 @@
 export const styles = {
+  container: {
+    mb: '100px'
+  },
   titleBar: {
     maxWidth: '100%',
     width: '100%',

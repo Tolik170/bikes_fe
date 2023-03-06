@@ -2,7 +2,7 @@ import popularItemFirst from '../../../assets/images/popular-items/popularItemFi
 import popularItemSecond from '../../../assets/images/popular-items/popularItemSecond.jpg'
 import popularItemThird from '../../../assets/images/popular-items/popularItemThird.jpg'
 
-export const popularItemsCards = [
+export const popularItemsMock = [
   {
     image: popularItemFirst,
     title: 'StumpJumper Comp Alloy',

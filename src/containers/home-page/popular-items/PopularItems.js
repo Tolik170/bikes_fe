@@ -1,25 +1,24 @@
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+
 import TitleWithDescription from '../../../components/title-with-description/TitleWithDescription'
 
-import { popularItemsCards } from './PopularItemsCards'
-
+import { popularItemsMock } from './PopularItemsCards'
 import { styles } from './PopularItems.styles'
 
 const PopularItems = () => {
   const { t } = useTranslation()
 
-  const cards = popularItemsCards.map((item, index) => {
+  const cards = popularItemsMock.map((item, index) => {
     return (
       <Box key={ index } sx={ styles.cardWrapper }>
         <Box
           alt={ item.title } component='img' src={ item.image }
           sx={ styles.cardImg }
-        ></Box>
+        />
 
         <TitleWithDescription
           description={ item.price }
@@ -33,10 +32,7 @@ const PopularItems = () => {
 
   return (
     <Box className='section' sx={ styles.container }>
-      <TitleWithDescription
-        title={ t('homePage.popularItems.title') }
-        titleStyles={ styles.sectionTitle }
-      />
+      <TitleWithDescription title={ t('homePage.popularItems.title') } titleStyles={ styles.sectionTitle } />
 
       <Box sx={ styles.cardsContainer }>
         { cards }

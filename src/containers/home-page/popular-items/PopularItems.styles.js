@@ -22,7 +22,7 @@ export const styles = {
     boxShadow: commonShadow,
     m: '0 auto',
     width: '100%',
-    maxWidth: '360px',
+    maxWidth: '340px',
     p: '20px 30px 0px 30px',
     '&:hover': {
       boxShadow: commonHoverShadow,
