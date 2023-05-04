@@ -1,11 +1,12 @@
 export const styles = {
-  wrapper: {
+  container: {
     maxWidth: '1128px',
     margin: '0 auto',
-    marginBottom: '32px',
+    mb: '32px',
     textAlign: 'center'
   },
   title: {
-    marginBottom: '16px'
+    typography: { sm: 'h4', xs: 'h5' },
+    mb: '10px'
   }
 }

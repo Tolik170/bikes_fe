@@ -3,18 +3,15 @@ import { styles } from './TitleWithDescription.styles'
 
 const TitleWithDescription = ({
   title,
-  titleStyles,
   description,
-  descriptionStyles,
-  style = styles,
-  componentStyles
+  sx = styles
 }) => {
   return (
-    <Box sx={ { ...style.wrapper, ...componentStyles } }>
-      <Typography sx={ { ...titleStyles, ...style.title } }>
+    <Box sx={ sx.container }>
+      <Typography sx={ sx.title }>
         { title }
       </Typography>
-      <Typography sx={ { ...descriptionStyles, ...style.description } }>
+      <Typography sx={ sx.description }>
         { description }
       </Typography>
     </Box>

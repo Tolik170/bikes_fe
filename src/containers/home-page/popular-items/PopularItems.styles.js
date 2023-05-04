@@ -5,14 +5,25 @@ export const styles = {
     textAlign: 'center',
     p: '35px 40px'
   },
-  sectionTitle: {
-    typography: { sm: 'h4', xs: 'h5' },
-    color: 'primary.900'
-  },
   cardsContainer: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '15px',
-    m: '50px 0 70px 0'
+    justifyContent: 'center',
+    gap: '25px',
+    mb: '50px'
+  },
+  card: {
+    titleWithDescription: {
+      wrapper: {
+        textAlign: 'left'
+      },
+      title: {
+        typography: 'h6',
+        mt: '25px',
+      },
+      description: {
+        typography: 'subtitle1',
+      }
+    }
   }
 }

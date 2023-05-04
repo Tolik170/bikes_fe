@@ -5,9 +5,10 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 
 import TitleWithDescription from '../../../components/title-with-description/TitleWithDescription'
-import ClickableCard from '../../../components/clickable-card/ClickableCard'
+import CardWithLink from '../../../components/card-with-link/CardWithLink'
 
 import { popularItemsMock } from './PopularItemsCards'
+import { routesPath } from '../../../routes/routesPath'
 import { styles } from './PopularItems.styles'
 
 const PopularItems = () => {
@@ -15,23 +16,23 @@ const PopularItems = () => {
 
   const cards = popularItemsMock.map((item) => {
     return (
-      <ClickableCard
-        image={ item.image } key={ item.title } name={ item.title }
-        price={ item.price } 
+      <CardWithLink
+        description={ item.price } img={ item.image } key={ item.title }
+        link={ '#' } sx={ styles.card } title={ item.title }
       />
     )
   })
 
   return (
     <Box className='section' sx={ styles.container }>
-      <TitleWithDescription title={ t('homePage.popularItems.title') } titleStyles={ styles.sectionTitle } />
+      <TitleWithDescription title={ t('homePage.popularItems.title') } />
 
       <Box sx={ styles.cardsContainer }>
         { cards }
       </Box>
 
       <Button
-        component={ Link } size='extraLarge' to={ '/catalog' }
+        component={ Link } size='extraLarge' to={ routesPath.catalog.route }
         variant='contained'
       >
         { t('homePage.popularItems.seeAllProducts') }

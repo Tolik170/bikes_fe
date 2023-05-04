@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box'
 import AppHeader from '../app-header/AppHeader'
 import AppMain from '../app-main/AppMain'
-// import ScrollToTopButton from '~/components/scroll-to-top-button/ScrollToTopButton'
 import Footer from '../Footer/Footer'
 import ScrollToTop from '../../components/scroll-to-top/ScrollToTop'
 
@@ -11,12 +10,7 @@ const styles = {
     flexDirection: 'column',
     height: '100vh',
     '.MuiToolbar-root + div': {
-      flexGrow: 1,
-      mt: {
-        md: '16px',
-        sm: '8px',
-        xs: '0px'
-      }
+      flexGrow: 1
     }
   }
 }
