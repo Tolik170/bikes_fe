@@ -1,0 +1,17 @@
+{
+  "yes": "Yes",
+  "no": "No",
+  "from": "From",
+  "to": "To",
+  "back": "Back",
+  "next": "Next",
+  "search": "Search",
+  "delete": "Delete",
+  "viewDetails": "View details",
+  "sortBy": "Sort by:",
+  "bikeModels": {
+    "mountain": "Mountain Bikes",
+    "road": "Road Bikes",
+    "turboElectric": "Turbo E-Bikes"
+  }
+}

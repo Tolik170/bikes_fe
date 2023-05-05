@@ -15,7 +15,7 @@ const appTypography = {
   h3: {
     fontWeight: 500,
     fontSize: '49px',
-    lineHeight: '55px'
+    lineHeight: '74px'
   },
   h4: {
     fontWeight: 500,
@@ -23,7 +23,7 @@ const appTypography = {
     lineHeight: '53px'
   },
   h5: {
-    fontWeight: 400,
+    fontWeight: 500,
     fontSize: '24px',
     lineHeight: '36px'
   },
@@ -32,6 +32,11 @@ const appTypography = {
     fontSize: '20px',
     lineHeight: '28px',
     letterSpacing: '0.15px'
+  },
+  midTitle: {
+    fontWeight: 500,
+    fontSize: '18px',
+    lineHeight: '24px'
   },
   subtitle1: {
     fontWeight: 400,

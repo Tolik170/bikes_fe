@@ -2,19 +2,17 @@ import React from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 
+import { ConfirmationDialogProvider } from './context/confirm-context'
 import AppContent from './containers/app-content/AppContent'
-// import { SnackBarContextProvider } from '../../context/snackbar-context'
 import { theme } from './styles/app-theme/custom-mui.styles'
 
 const App = () => {
   return (
     <ThemeProvider theme={ theme }>
-      { /* <SnackBarContextProvider> */ }
-      <>
+      <ConfirmationDialogProvider>
         <CssBaseline />
         <AppContent />
-      </>
-      { /* </SnackBarContextProvider> */ }
+      </ConfirmationDialogProvider>
     </ThemeProvider>
   )
 }

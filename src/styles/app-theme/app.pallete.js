@@ -9,7 +9,7 @@ const palette = {
     white: '#FFFFFF',
     grey: '#E6EBED'
   },
-  companyBlue: 'rgba(0, 167, 167, 0.2)',
+  companyBlue: 'rgba(150, 167, 167, 0.2)',
   error: {
     50: '#FFEFF2',
     100: '#FFCFD4',

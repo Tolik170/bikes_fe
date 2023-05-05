@@ -14,7 +14,7 @@ export const styles = {
   },
   card: {
     titleWithDescription: {
-      wrapper: {
+      container: {
         textAlign: 'left'
       },
       title: {

@@ -26,10 +26,6 @@ const button = {
       backgroundColor: palette.primary[900],
       color: palette.primary[50]
     },
-    light: {
-      color: palette.basic.black,
-      backgroundColor: palette.basic.grey
-    },
     outlined: {
       color: palette.primary[900]
     },
@@ -37,7 +33,7 @@ const button = {
       color: palette.primary[900]
     },
     tonal: {
-      backgroundColor: palette.primary[50]
+      backgroundColor: palette.companyBlue
     }
   }
 }
