@@ -47,7 +47,7 @@ const CatalogFilterList = ({ updateFilterByKey, filters }) => {
         items={ modelOptions }
         onChange={ updateFilterByKey('level') }
         value={ filters.level }
-        variant={ 'body2' }
+        variant={ 'body1' }
       />
       { filterTitle(t('catalogPage.filters.price')) }
       <AppRange

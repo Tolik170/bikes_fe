@@ -1,13 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import Checkbox from '@mui/material/Checkbox'
 import Box from '@mui/material/Box'
-import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
 import { styles } from './CheckboxList.styles'
 
-const CheckboxList = ({ items, error = '', value = [], title, variant, onChange }) => {
+const CheckboxList = ({ items, value = [], title, variant, onChange }) => {
   const { t } = useTranslation()
 
   const handleCheckbox = (checkbox) => {
@@ -33,19 +32,10 @@ const CheckboxList = ({ items, error = '', value = [], title, variant, onChange 
     </Typography>
   )
 
-  const helperText = (
-    <Tooltip title={ error }>
-      <Typography sx={ styles.error } variant='caption'>
-        { error }
-      </Typography>
-    </Tooltip>
-  )
-
   return (
     <Box sx={ styles.root }>
       { checkboxesTitle }
       { checkboxesList }
-      { helperText }
     </Box>
   )
 }

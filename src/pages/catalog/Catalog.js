@@ -11,14 +11,14 @@ import useBreakpoints from '../../hooks/use-breakpoints'
 import { useFilterQuery } from '../../hooks/use-filter-query'
 import AppSelect from '../../components/app-select/AppSelect'
 import AppDrawer from '../../components/app-drawer/AppDrawer'
-import TitleWithDescription from '../../components/title-with-description/TitleWithDescription'
+import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 import CardWithLink from '../../components/card-with-link/CardWithLink'
 import FiltersToggle from '../../containers/catalog-page/filters-toggle/FiltersToggle'
 
 import { countActiveOfferFilters } from '../../utils/count-active-filters'
 import { popularItemsMock } from '../../containers/home-page/popular-items/PopularItemsCards'
 import { defaultFilters } from './Catalog.constants'
-import { styles } from './Catalog.styles'
+import { styles } from '~/pages/catalog/Catalog.styles'
 
 const sortFields = [
   { value: 'newest', title: 'catalogPage.sort.newest' },
