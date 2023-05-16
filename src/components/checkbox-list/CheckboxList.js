@@ -14,15 +14,15 @@ const CheckboxList = ({ items, value = [], title, variant, onChange }) => {
     onChange(updatedCheckboxes)
   }
 
-  const checkboxesList = items.map((checkbox) => (
+  const checkboxesList = items.map((item) => (
     <FormControlLabel
-      checked={ value.includes(checkbox) }
+      checked={ value.includes(item.value) }
       control={ <Checkbox sx={ styles.checkbox } /> }
-      key={ checkbox }
+      key={ item.value }
       label={ <Typography variant={ variant }>
-        { t(checkbox) }
+        { t(item.title) }
       </Typography> }
-      onChange={ () => handleCheckbox(checkbox) }
+      onChange={ () => handleCheckbox(item.value) }
     />
   ))
 

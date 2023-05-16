@@ -7,6 +7,19 @@ export const styles = {
     backgroundColor: 'backgroundColor',
     py: '80px'
   },
+  titleWithDescription: {
+    container: {
+      mb: '40px',
+      textAlign: 'center',
+    },
+    title: {
+      typography: { sm: 'h4', xs: 'h5' }
+    },
+    description: {
+      typography: { sm: 'body1', xs: 'body2' },
+      color: 'primary.500'
+    }
+  },
   content: {
     display: 'flex',
     columnGap: '20px'

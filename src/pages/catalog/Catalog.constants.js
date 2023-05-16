@@ -2,25 +2,20 @@ export const defaultFilters = {
   sort: 'createdAt',
   rating: '0',
   name: '',
-  model: [],
+  category: [],
   price: undefined,
   page: '1'
 }
 
-export const defaultResponse = {
-  minPrice: 0,
-  maxPrice: 1000
-}
-
-export const bikeModels = {
-  mountain: 'Mountain Bikes',
-  road: 'Road Bikes',
-  electric: 'Turbo E-Bikes'
-}
+export const bikeCategories = [
+  { value: 'Mountain', title: 'common.bikeModels.mountain' },
+  { value: 'Road', title: 'common.bikeModels.road' },
+  { value: 'Electric', title: 'common.bikeModels.turboElectric' }
+]
 
 export const sortFields = [
   { value: 'createdAt', title: 'catalogPage.sort.newest' },
-  { value: 'popularity', title: 'catalogPage.sort.popularity' },
+  { value: 'purchasedCount', title: 'catalogPage.sort.popularity' },
   { value: 'priceAsc', title: 'catalogPage.sort.priceAsc' },
   { value: 'priceDesc', title: 'catalogPage.sort.priceDesc' }
 ]

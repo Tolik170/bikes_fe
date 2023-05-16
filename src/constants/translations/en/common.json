@@ -10,8 +10,8 @@
   "viewDetails": "View details",
   "sortBy": "Sort by:",
   "bikeModels": {
-    "mountain": "Mountain Bikes",
-    "road": "Road Bikes",
-    "turboElectric": "Turbo E-Bikes"
+    "mountain": "Mountain",
+    "road": "Road",
+    "turboElectric": "Turbo E"
   }
 }

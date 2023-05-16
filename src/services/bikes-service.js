@@ -3,7 +3,7 @@ import { URL } from '../constants/requests'
 
 
 export const bikesService = {
-  getBikes: () => {
-    return axiosClient.get(URL.bikes.get)
+  getBikes: (params) => {
+    return axiosClient.get(URL.bikes.get, { params })
   }
 }

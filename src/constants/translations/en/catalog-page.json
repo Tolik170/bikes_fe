@@ -1,8 +1,9 @@
 {
-  "title": "Catalog",
+  "title": "Explore Products",
+  "description": "Discover bikes that you are interested in",
   "filters": {
     "title": "Filters",
-    "models": "Models:",
+    "models": "Category:",
     "price": "Price:",
     "rating": "Rating:",
     "search": "Search by name:",
@@ -16,8 +17,8 @@
   "sort": {
     "newest": "Newest",
     "popularity": "Popularity",
-    "priceAsc": "Price (hight - low)",
-    "priceDesc": "Price (low - high)"
+    "priceAsc": "Price (low - high)",
+    "priceDesc": "Price (high - low)"
   }
 }
 

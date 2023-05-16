@@ -17,8 +17,8 @@ const PopularItems = () => {
   const cards = popularItemsMock.map((item) => {
     return (
       <CardWithLink
-        description={ item.price } img={ item.image } key={ item.title }
-        link={ '#' } sx={ styles.card } title={ item.title }
+        description={ item.price } img={ item.image } key={ item.name }
+        link={ '#' } sx={ styles.card } title={ item.name }
       />
     )
   })

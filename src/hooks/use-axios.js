@@ -1,17 +1,16 @@
 import { useState, useEffect, useCallback } from 'react'
 
-const useAxios = ({ service, fetchOnMount = true, clearResponse = false }) => {
-  const [response, setResponse] = useState(null)
+const useAxios = ({ service, fetchOnMount = true, defaultResponse = null }) => {
+  const [response, setResponse] = useState(defaultResponse)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(fetchOnMount)
 
   const fetchData = useCallback(
     async (data) => {
       try {
-        clearResponse && setResponse(null)
         setLoading(true)
         const res = await service(data)
-        setResponse(res)
+        setResponse(res.data)
         setError(null)
         return res
       } catch (e) {
@@ -20,7 +19,7 @@ const useAxios = ({ service, fetchOnMount = true, clearResponse = false }) => {
         setLoading(false)
       }
     },
-    [service, clearResponse]
+    [service]
   )
 
   useEffect(() => {

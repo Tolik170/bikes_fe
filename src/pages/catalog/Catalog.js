@@ -1,11 +1,11 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 
 import CatalogFiltersBlock from '../../containers/catalog-page/catalog-filters-block/CatalogFiltersBlock'
-// import { bikesService } from '../../services/bikes-service'
-// import useAxios from '../../hooks/use-axios'
+import { bikesService } from '../../services/bikes-service'
+import useAxios from '../../hooks/use-axios'
 import { useDrawer } from '../../hooks/use-drawer'
 import useBreakpoints from '../../hooks/use-breakpoints'
 import { useFilterQuery } from '../../hooks/use-filter-query'
@@ -13,40 +13,57 @@ import AppSelect from '../../components/app-select/AppSelect'
 import AppDrawer from '../../components/app-drawer/AppDrawer'
 import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 import CardWithLink from '../../components/card-with-link/CardWithLink'
+import AppLoader from '~/components/app-loader/AppLoader'
 import FiltersToggle from '../../containers/catalog-page/filters-toggle/FiltersToggle'
 
 import { countActiveOfferFilters } from '../../utils/count-active-filters'
-import { popularItemsMock } from '../../containers/home-page/popular-items/PopularItemsCards'
-import { defaultFilters } from './Catalog.constants'
+import { defaultFilters, sortFields } from './Catalog.constants'
 import { styles } from '~/pages/catalog/Catalog.styles'
-
-const sortFields = [
-  { value: 'newest', title: 'catalogPage.sort.newest' },
-  { value: 'popularity', title: 'catalogPage.sort.popularity' },
-  { value: 'priceAsc', title: 'catalogPage.sort.priceAsc' },
-  { value: 'priceDesc', title: 'catalogPage.sort.priceDesc' }
-]
 
 const Catalog = () => {
   const { t } = useTranslation()
-  const [sortByValue, setSortByValue] = useState('newest')
-  const { openDrawer, closeDrawer, isOpen } = useDrawer()
   const { isDesktop } = useBreakpoints()
+  const [sort, setSort] = useState('createdAt')
+  const { openDrawer, closeDrawer, isOpen } = useDrawer()
 
-  const { filters, activeFilterCount, filterQueryActions } =
-  useFilterQuery({
+  const { filters, activeFilterCount, searchParams, filterQueryActions } = useFilterQuery({
     defaultFilters,
     countActiveFilters: countActiveOfferFilters
   })
 
-  // const getBikes = useCallback(() => bikesService.getBikes(), [])
-  // const { response: bikes, loading } = useAxios({ service: getBikes })
+  const getBikes = useCallback((params) => bikesService.getBikes(params), [])
 
-  const bikesCards = popularItemsMock.map((item) => {
+  const {
+    response: bikesResponse,
+    loading: bikesLoading,
+    fetchData: fetchBikes
+  } = useAxios({
+    service: getBikes,
+    fetchOnMount: false,
+    defaultResponse: { count: 0, items: [] }
+  })
+  console.log(activeFilterCount)
+  const { items: bikes } = bikesResponse
+
+  useEffect(() => {
+    fetchBikes({
+      ...filters,
+      limit: 5,
+      skip: 0,
+      sort
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchBikes, searchParams, sort])
+
+  if (bikesLoading && !bikes.length) {
+    return <AppLoader pageLoad size={ 70 } />
+  }
+
+  const bikesCards = bikes.map((item) => {
     return (
       <CardWithLink
-        description={ item.price } img={ item.image } key={ item.title }
-        title={ item.title }
+        description={ item.price } img={ item.images[0] } key={ item.name }
+        title={ item.name }
       />
     )
   })
@@ -74,19 +91,18 @@ const Catalog = () => {
   return (
     <Box sx={ styles.container }>
       <Container>
-        <TitleWithDescription title={ t('catalogPage.title') } />
+        <TitleWithDescription
+          description={ t('catalogPage.description') }
+          sx={ styles.titleWithDescription }
+          title={ t('catalogPage.title') }
+        />
 
-        <Box>
+        <Box sx={ { display: 'flex', justifyContent: 'space-between' } }>
+          <FiltersToggle chosenFiltersQty={ activeFilterCount } handleToggle={ toggleFilters } />
+
           <AppSelect
-            fields={ sortFields }
-            selectTitle={ t('common.sortBy') }
-            setValue={ setSortByValue }
-            value={ sortByValue }
-          // variant='standard'
-          />
-          <FiltersToggle
-            chosenFiltersQty={ activeFilterCount }
-            handleToggle={ toggleFilters }
+            fields={ sortFields } selectTitle={ t('common.sortBy') } setValue={ setSort }
+            value={ sort }
           />
         </Box>
 

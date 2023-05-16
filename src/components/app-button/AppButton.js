@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button'
 
-import Loader from '../app-loader/Loader'
+import AppLoader from '../app-loader/AppLoader'
+
 
 const AppButton = ({
   children,
@@ -10,7 +11,7 @@ const AppButton = ({
   size = 'large',
   ...props
 }) => {
-  const loader = <Loader size={ 20 } sx={ { opacity: '0.6', color: 'basic.black' } } />
+  const loader = <AppLoader size={ 20 } sx={ { opacity: '0.6', color: 'basic.black' } } />
 
   return (
     <Button
