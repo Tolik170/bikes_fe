@@ -56,6 +56,6 @@ export const styles = {
   inputTitle: { color: 'primary.600' },
   priceInputs: {
     display: 'flex',
-    gap: '24px'
+    gap: '10px'
   }
 }

@@ -20,7 +20,7 @@ const CardWithLink = ({
     >
       <Box
         alt='item image' component='img' src={ img }
-        sx={ styles.img }
+        sx={ { ...styles.img, ...sx.img } }
       />
       <TitleWithDescription
         description={ description }

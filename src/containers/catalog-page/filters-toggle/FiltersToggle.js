@@ -9,7 +9,7 @@ import { styles } from './FiltersToggle.styles'
 const FiltersToggle = ({ chosenFiltersQty = 0, handleToggle }) => {
   const { t } = useTranslation()
 
-  const filterQuantity = chosenFiltersQty && (
+  const filterQuantity = chosenFiltersQty > 0 && (
     <Typography sx={ styles.chosenFiltersQty } variant='subtitle2'>
       { chosenFiltersQty }
     </Typography>

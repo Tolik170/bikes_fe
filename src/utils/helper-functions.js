@@ -9,4 +9,5 @@ export const parseQueryParams = (searchParams, defaultFilters) => {
       }
     }
   })
+  return filtersFromQuery
 }

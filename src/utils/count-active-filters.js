@@ -2,8 +2,9 @@ import { parseQueryParams } from './helper-functions'
 import { isDefaultPrice, isEmptyArray } from './range-filter'
 
 export const countActiveOfferFilters = (searchParams, defaultFilters) => {
-  const ignoredFields = ['sort']
-  const filtersFromQuery = parseQueryParams(searchParams, defaultFilters) ?? {}
+  const ignoredFields = ['sort', 'page']
+  const filtersFromQuery = parseQueryParams(searchParams, defaultFilters)
+
 
   return Object.entries(filtersFromQuery).reduce((count, [key, value]) => {
     if (ignoredFields.includes(key)) {

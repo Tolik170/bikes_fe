@@ -8,6 +8,8 @@
   "search": "Search",
   "delete": "Delete",
   "viewDetails": "View details",
+  "resultsNotFound": "Sorry, no results found",
+  "notFound": "We couldn’t find what you were searching for.",
   "sortBy": "Sort by:",
   "bikeModels": {
     "mountain": "Mountain",

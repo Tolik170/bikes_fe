@@ -41,7 +41,7 @@ export const useFilterQuery = ({ defaultFilters, countActiveFilters }) => {
     setFilters(defaultFilters)
   }, [defaultFilters, setSearchParams])
 
-  const activeFilterCount = countActiveFilters ? countActiveFilters(searchParams, defaultFilters) : null
+  const activeFilterCount = countActiveFilters ? countActiveFilters(searchParams, defaultFilters) : 0
 
   return {
     filters,

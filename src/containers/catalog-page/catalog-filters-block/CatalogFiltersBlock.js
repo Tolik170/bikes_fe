@@ -13,7 +13,7 @@ import { styles } from './CatalogFilterBlock.styles'
 
 const CatalogFiltersBlock = ({ filters, filterActions, activeFilterCount, closeFilters, open }) => {
   const { t } = useTranslation()
-  const { isDesktop } = useBreakpoints()
+  const { isDesktop, isMobile } = useBreakpoints()
   const { updateFilter, resetFilters, updateQueryParams } = filterActions
 
   const sortOptions = sortFields.map(({ title, value }) => ({
@@ -27,20 +27,23 @@ const CatalogFiltersBlock = ({ filters, filterActions, activeFilterCount, closeF
     !isDesktop && closeFilters()
   }
 
-  const mobileFields = !isDesktop && (
+  const filterBar = !isDesktop && (
     <>
       <FiltersToggle chosenFiltersQty={ activeFilterCount } />
       <Divider />
-      <AppSelect
-        fields={ sortOptions }
-        fullWidth
-        selectTitle={ t('common.sortBy') }
-        setValue={ updateFilterByKey('sort') }
-        size='small'
-        sx={ styles.selectWrapper }
-        value={ filters.sort }
-      />
     </>
+  )
+
+  const select = isMobile && (
+    <AppSelect
+      fields={ sortOptions }
+      fullWidth
+      selectTitle={ t('common.sortBy') }
+      setValue={ updateFilterByKey('sort') }
+      size='small'
+      sx={ styles.select }
+      value={ filters.sort }
+    />
   )
 
   const buttonActions = [
@@ -62,7 +65,8 @@ const CatalogFiltersBlock = ({ filters, filterActions, activeFilterCount, closeF
 
   return (
     <Stack spacing={ 2 } sx={ styles.root(open) }>
-      { mobileFields }
+      { filterBar }
+      { select }
 
       <CatalogFilterList
         filters={ filters }

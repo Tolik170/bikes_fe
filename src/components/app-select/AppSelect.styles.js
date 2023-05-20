@@ -2,10 +2,25 @@ export const styles = {
   selectField: {
     minWidth: '115px'
   },
-  selectContainer: {
+  container: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    '& .MuiInputBase-input': {
+      color: 'primary.700',
+      padding: '12.5px 14px',
+    }
   },
-  selectTitle: { color: 'primary.500', mr: '8px' }
+  title: { 
+    color: 'primary.700', 
+    mr: '8px', 
+    minWidth: '65px',
+    typography: 'body1',
+    fontWeight: '500', 
+  },
+  formControl: {
+    '& label': {
+      lineHeight: 'inherit',
+      color: 'primary.500'
+    }
+  }
 }
-  

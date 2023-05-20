@@ -3,6 +3,7 @@ import { commonHoverShadow, commonShadow } from '../../styles/app-theme/custom-s
 export const styles = {
   container: (isClickable) => ({
     backgroundColor: 'basic.white',
+    textAlign: 'center',
     boxShadow: commonShadow,
     textDecoration: 'none',
     width: '100%',
@@ -17,5 +18,5 @@ export const styles = {
   img: {
     width: '100%',
     maxHeight: '300px'
-  },
+  }
 }
