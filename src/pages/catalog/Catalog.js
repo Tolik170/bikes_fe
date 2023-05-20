@@ -21,6 +21,7 @@ import FiltersToggle from '~/containers/catalog-page/filters-toggle/FiltersToggl
 
 import { addCommas } from '~/utils/addCommas'
 import { countActiveOfferFilters } from '~/utils/count-active-filters'
+import { routesPath } from '~/routes/routesPath'
 import { defaultFilters, sortFields } from '~/pages/catalog/Catalog.constants'
 import { styles } from '~/pages/catalog/Catalog.styles'
 
@@ -93,7 +94,7 @@ const Catalog = () => {
         description={ `$ ${addCommas(item.price)}` }
         img={ item.images[0] }
         key={ item.name }
-        link={ '#' }
+        link={ `${routesPath.bikeDetails.path}/${item._id}` }
         sx={ styles.cardWithLink }
         title={ item.name }
       />

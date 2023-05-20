@@ -6,5 +6,6 @@ export const routesPath = {
     roadBikes: { label: 'roadBikes', route: '/#road-bikes' },
     electricBikes: { label: 'electricBikes', route: '/#electric-bikes' },
   },
+  bikeDetails: { route: 'bike-details/:id', path: '/bike-details' },
   privacyPolicy: { route: '/privacy-policy' }
 }
