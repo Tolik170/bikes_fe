@@ -5,7 +5,7 @@ import { routesPath } from '~/routes/routesPath'
 import Home from '~/pages/home/Home'
 const Catalog = lazy(() => import('~/pages/catalog/Catalog'))
 const CookiePolicy = lazy(() => import('~/pages/cookie-policy/CookiePolicy'))
-const BikesDetails = lazy(() => import('~/pages/bike-details/BikesDetails'))
+const BikesDetails = lazy(() => import('~/pages/bike-details/BikeDetails'))
 
 const AppRouter = () => {
   return (

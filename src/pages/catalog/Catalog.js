@@ -92,7 +92,7 @@ const Catalog = () => {
     return (
       <CardWithLink
         description={ `$ ${addCommas(item.price)}` }
-        img={ item.images[0] }
+        img={ item.previewImage }
         key={ item.name }
         link={ `${routesPath.bikeDetails.path}/${item._id}` }
         sx={ styles.cardWithLink }
