@@ -1,6 +1,13 @@
 {
-    "selectSize": "Select a Size:",
-    "orderNow": "Order Now",
-    "addToCart": "Add To Cart",
-    "bikeDescription": "Bike Description"
+  "selectSize": "Select a Size:",
+  "orderNow": "Order Now",
+  "addToCart": "Add To Cart",
+  "bikeDescription": "Bike Description",
+  "techSpecifications": {
+    "title": "Technical Specification",
+    "frameSet": "FRAMESET",
+    "fork": "FORK",
+    "brakes": "BRAKES",
+    "wheelsAndTires": "WHEELS & TIRES"
+  }
 }

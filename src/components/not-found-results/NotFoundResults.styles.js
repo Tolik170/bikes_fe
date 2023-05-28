@@ -9,7 +9,7 @@ export const styles = {
     my: { xs: '50px', sm: '75px', md: '100px' }
   },
   imgTitleDescription: {
-    root: { textAlign: 'center' },
+    container: { textAlign: 'center' },
     titleWithDescription: {
       title: {
         typography: 'h5',

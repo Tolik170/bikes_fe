@@ -20,7 +20,7 @@ const NotFoundResults = ({
       <ImgTitleDescription
         description={ description }
         img={ searchIcon }
-        style={ styles.imgTitleDescription }
+        sx={ styles.imgTitleDescription }
         title={ t('common.resultsNotFound') }
       />
       { buttonText && (

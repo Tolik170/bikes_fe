@@ -7,18 +7,18 @@ const ImgTitleDescription = ({
   img,
   title,
   description,
-  style = styles
+  sx = styles
 }) => {
   return (
-    <Box sx={ style.root }>
+    <Box sx={ sx.container }>
       <Box
         alt='info' component='img' src={ img }
-        sx={ style.img }
+        sx={ sx.img }
       />
 
       <TitleWithDescription
         description={ description }
-        style={ style.titleWithDescription }
+        sx={ sx.titleWithDescription }
         title={ title }
       />
     </Box>

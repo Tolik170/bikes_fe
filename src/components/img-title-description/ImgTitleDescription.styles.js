@@ -1,5 +1,5 @@
 export const styles = {
-  root: { m: { xs: '100px 10px', sm: '56px', md: '80px' } },
+  container: { m: { xs: '100px 10px', sm: '56px', md: '80px' } },
   img: { display: 'block', margin: '0 auto' },
   titleWithDescription: {
     wrapper: {
@@ -10,7 +10,7 @@ export const styles = {
       typography: 'h5'
     },
     description: {
-      typography: 'subtitile'
+      typography: 'body2'
     }
   }
 }

@@ -13,11 +13,13 @@ import AppLoader from '~/components/app-loader/AppLoader'
 import AppCarousel from '~/components/app-carousel/AppCarousel'
 import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 import AppButton from '~/components/app-button/AppButton'
+import ShowMoreCollapse from '~/components/show-more-collapse/ShowMoreCollapse'
+import TechSpecification from '~/containers/bike-details/TechSpecification'
+
 
 import { errorRoutes } from '~/routes/errorRoutes'
 import { styles } from '~/pages/bike-details/BikeDetails.styles'
 import { addCommas } from '~/utils/addCommas'
-import ShowMoreCollapse from '~/components/show-more-collapse/ShowMoreCollapse'
 
 const BikesDetails = () => {
   const { t } = useTranslation()
@@ -128,6 +130,10 @@ const BikesDetails = () => {
           description={ bike.description ?? '' }
           title={ t('bikeDetails.bikeDescription') }
         />
+      </Box>
+
+      <Box sx={ styles.cardWrapper }>
+        <TechSpecification bike={ bike } />
       </Box>
     </Container>
   )
