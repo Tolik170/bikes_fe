@@ -29,7 +29,8 @@ export const styles = {
   },
   info: {
     width: '100%',
-    minWidth: '252px'
+    minWidth: '252px',
+    maxWidth: '310px'
   },
   titleWithDescription: {
     container: { textAlign: 'left', mb: '10px' },

@@ -8,7 +8,7 @@
   "bikeDescription": "Bike Description",
   "techSpecifications": {
     "title": "Technical Specification",
-    "frameSet": "FRAMESET",
+    "frame": "FRAME",
     "fork": "FORK",
     "brakes": "BRAKES",
     "wheelsAndTires": "WHEELS & TIRES"

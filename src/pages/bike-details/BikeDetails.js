@@ -70,11 +70,11 @@ const BikesDetails = () => {
 
   const buttonGroup = (
     <Box sx={ styles.buttonGroup }>
-      <AppButton fullWidth variant='containedLight'>
+      <AppButton fullWidth size='medium' variant='containedLight'>
         { t('bikeDetails.orderNow') }
       </AppButton>
 
-      <AppButton fullWidth variant='contained'>
+      <AppButton fullWidth size='medium' variant='contained'>
         { t('bikeDetails.addToCart') }
       </AppButton>
     </Box>

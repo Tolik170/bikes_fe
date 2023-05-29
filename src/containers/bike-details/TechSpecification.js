@@ -7,33 +7,34 @@ import ImgTitleDescription from '~/components/img-title-description/ImgTitleDesc
 import frameIcon from '~/assets/images/techSpecification/frame.png'
 import forkIcon from '~/assets/images/techSpecification/fork.png'
 import brakeIcon from '~/assets/images/techSpecification/brake.png'
-import wheelIcon from '~/assets/images/techSpecification/tire.png'
+import wheelIcon from '~/assets/images/techSpecification/wheel.png'
 import { styles } from '~/containers/bike-details/TechSpecification.styles'
 
 const TechSpecification = ({ bike }) => {
   const { t } = useTranslation()
-  const { name, sizes, price } = bike
+  const { techSpecification } = bike
+  const { frame, fork, brakes, wheels } = techSpecification
 
   const cardItems = [
     {
       img: frameIcon,
-      title: t('bikeDetails.techSpecifications.frameSet'),
-      description: name
+      title: t('bikeDetails.techSpecifications.frame'),
+      description: frame
     },
     {
       img: forkIcon,
       title: t('bikeDetails.techSpecifications.fork'),
-      description: sizes
+      description: fork
     },
     {
       img: brakeIcon,
       title: t('bikeDetails.techSpecifications.brakes'),
-      description: sizes
+      description: brakes
     },
     {
       img: wheelIcon,
       title: t('bikeDetails.techSpecifications.wheelsAndTires'),
-      description: `${price} ${t('common.uahSlashHour')}`
+      description: wheels
     }
   ]
 

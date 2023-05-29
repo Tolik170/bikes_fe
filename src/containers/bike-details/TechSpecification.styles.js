@@ -28,9 +28,9 @@ export const styles = {
     },
     img: {
       display: { xs: 'none', sm: 'block' },
-      width: '80px',
-      height: '80px',
-      fill: 'blue',
+      width: '50px',
+      height: '50px',
+      color: 'blue',
     },
     titleWithDescription: {
       container: {
@@ -43,15 +43,8 @@ export const styles = {
         typography: { xs: 'subtitle1', sm: 'h6' }
       },
       description: {
-        display: 'grid',
-        gridTemplateColumns: {
-          xs: 'repeat(1, 1fr)',
-          sm: 'repeat(2, max-content)',
-          md: 'repeat(3, max-content)'
-        },
-        gap: { xs: '10px', sm: '10px 40px' },
         typography: { xs: 'body2', sm: 'body1' },
-        color: 'primary.900'
+        color: 'primary.700'
       }
     }
   }
