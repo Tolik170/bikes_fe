@@ -5,17 +5,20 @@ import Box from '@mui/material/Box'
 import { Container, Typography } from '@mui/material'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+import StraightenIcon from '@mui/icons-material/Straighten'
 
+import { useModalContext } from '~/context/modal-context'
 import { bikesService } from '~/services/bikes-service'
 import useAxios from '~/hooks/use-axios'
 import useBreakpoints from '~/hooks/use-breakpoints'
 import AppLoader from '~/components/app-loader/AppLoader'
 import AppCarousel from '~/components/app-carousel/AppCarousel'
-import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
+import AppRatingLarge from '~/components/app-rating-large/AppRatingLarge'
 import AppButton from '~/components/app-button/AppButton'
+import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 import ShowMoreCollapse from '~/components/show-more-collapse/ShowMoreCollapse'
 import TechSpecification from '~/containers/bike-details/TechSpecification'
-
+import SizeDialog from '~/containers/size-dialog/SizeDialog'
 
 import { errorRoutes } from '~/routes/errorRoutes'
 import { styles } from '~/pages/bike-details/BikeDetails.styles'
@@ -25,9 +28,9 @@ const BikesDetails = () => {
   const { t } = useTranslation()
   const { id = '' } = useParams()
   const { isDesktop, isMobile } = useBreakpoints()
+  const { openModal } = useModalContext()
   const [toggle, setToggle] = useState(49)
   const navigate = useNavigate()
-
 
   const onToggleChange = (_, value) => {
     setToggle(value)
@@ -45,8 +48,8 @@ const BikesDetails = () => {
     return <AppLoader pageLoad size={ 70 } />
   }
 
-  if (!bikeLoading) {
-    console.log(bike)
+  const openSizeGuideDialog = () => {
+    openModal({ component: <SizeDialog /> })
   }
 
   const carouselImages = bike.images.map((image) => (
@@ -58,8 +61,7 @@ const BikesDetails = () => {
 
   const sizeToggle = bike.sizes.map((size) => (
     <ToggleButton
-      disableRipple key={ size }
-      sx={ styles.sizeToggle }
+      disableRipple key={ size } sx={ styles.sizeToggle }
       value={ size }
     >
       { size }
@@ -68,17 +70,11 @@ const BikesDetails = () => {
 
   const buttonGroup = (
     <Box sx={ styles.buttonGroup }>
-      <AppButton
-        fullWidth
-        variant='containedLight'
-      >
+      <AppButton fullWidth variant='containedLight'>
         { t('bikeDetails.orderNow') }
       </AppButton>
 
-      <AppButton
-        fullWidth
-        variant='contained'
-      >
+      <AppButton fullWidth variant='contained'>
         { t('bikeDetails.addToCart') }
       </AppButton>
     </Box>
@@ -96,7 +92,7 @@ const BikesDetails = () => {
   }
 
   return (
-    <Container sx={ styles.container }>  
+    <Container sx={ styles.container }>
       <Box sx={ styles.imgWithInfo }>
         <AppCarousel settings={ carouselSettings }>
           { carouselImages }
@@ -109,16 +105,31 @@ const BikesDetails = () => {
             title={ bike.name }
           />
 
+          <AppRatingLarge
+            readOnly reviewsCount={ bike.ratingsQuantity } sx={ styles.rating }
+            value={ bike.ratingsAverage }
+          />
+
           <Typography sx={ styles.sizeTitle }>
             { t('bikeDetails.selectSize') }
           </Typography>
 
           <ToggleButtonGroup
-            exclusive onChange={ onToggleChange }
-            sx={ styles.sizeToggleGroup } value={ toggle }
+            exclusive onChange={ onToggleChange } sx={ styles.sizeToggleGroup }
+            value={ toggle }
           >
             { sizeToggle }
           </ToggleButtonGroup>
+
+          <Box sx={ styles.sizeGuideContainer }>
+            <Typography
+              onClick={ openSizeGuideDialog }
+              sx={ styles.sizeGuide }
+            >
+              { t('bikeDetails.sizeGuide') }
+            </Typography>
+            <StraightenIcon />
+          </Box>
 
           { buttonGroup }
         </Box>

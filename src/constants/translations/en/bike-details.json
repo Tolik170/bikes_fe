@@ -1,5 +1,8 @@
 {
   "selectSize": "Select a Size:",
+  "sizeGuide": "Size guide",
+  "sizeGuideModalTitle":"Trying to determine the best bike size for you?",
+  "sizeGuideModalLink":"Find Your Size",
   "orderNow": "Order Now",
   "addToCart": "Add To Cart",
   "bikeDescription": "Bike Description",

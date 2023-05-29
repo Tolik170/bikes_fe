@@ -95,6 +95,7 @@ const Catalog = () => {
         img={ item.previewImage }
         key={ item.name }
         link={ `${routesPath.bikeDetails.path}/${item._id}` }
+        rating={ item.ratingsAverage }
         sx={ styles.cardWithLink }
         title={ item.name }
       />

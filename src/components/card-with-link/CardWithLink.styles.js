@@ -18,5 +18,10 @@ export const styles = {
   img: {
     width: '100%',
     maxHeight: '300px'
+  },
+  rating: {
+    p: 0, 
+    mt: '5px', 
+    ml: '-3px' 
   }
 }
