@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 
 import sizeChart from '~/assets/images/sizeChart.jpg'
-import styles from '~/containers/size-dialog/SizeDialog.styles'
+import { styles } from '~/containers/size-dialog/SizeDialog.styles'
 
 const SizeDialog = () => {
   const { t } = useTranslation()

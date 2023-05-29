@@ -1,28 +1,15 @@
 import Box from '@mui/material/Box'
-import AppHeader from '../app-header/AppHeader'
-import AppMain from '../app-main/AppMain'
-import Footer from '../Footer/Footer'
-import ScrollToTop from '../../components/scroll-to-top/ScrollToTop'
 
-const styles = {
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100vh',
-    '.MuiToolbar-root + div': {
-      flexGrow: 1
-    }
-  }
-}
+import AppHeader from '~/containers/app-header/AppHeader'
+import AppMain from '~/containers/app-main/AppMain'
+
+import { styles } from '~/containers/app-content/AppContent.styles'
 
 const AppContent = () => {
   return (
-    <Box sx={ styles.content }>
+    <Box sx={ styles.root }>
       <AppHeader />
-      <ScrollToTop />
       <AppMain />
-      { /* <ScrollToTopButton /> */ }
-      <Footer /> 
     </Box>
   )
 }

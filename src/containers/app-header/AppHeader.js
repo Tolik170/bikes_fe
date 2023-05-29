@@ -1,14 +1,16 @@
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Navbar from '../navbar/NavBar'
-import { mainShadow } from '../../styles/app-theme/custom-shadows'
+
+import { styles } from '~/containers/app-header/AppHeader.styles'
+
 const AppHeader = () => {
   return (
     <>
-      <AppBar color='common' sx={ { boxShadow: mainShadow } }>
+      <AppBar color='common' sx={ styles.appBar }>
         <Navbar />
       </AppBar>
-      <Toolbar data-testid='toolbar' sx={ { height: { xs: '56px', sm: '72px', md: '80px' } } } />
+      <Toolbar sx={ styles.toolbar } />
     </>
   )
 }

@@ -48,7 +48,7 @@ const Catalog = () => {
     fetchOnMount: false,
     defaultResponse: { count: 0, items: [] }
   })
-  console.log(activeFilterCount)
+
   const { items: bikes, count: bikesCount } = bikesResponse
 
   const {
