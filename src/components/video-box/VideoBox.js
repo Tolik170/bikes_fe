@@ -3,8 +3,12 @@ import Box from '@mui/material/Box'
 
 import { styles } from './VideoBox.styles'
 import titleBar from '../../assets/images/video-box/title-bar.png'
+import useBreakpoints from '~/hooks/use-breakpoints'
 
 const VideoBox = () => {
+  const { isMobile } = useBreakpoints()
+  const videoHeight = isMobile ? '200px' : '500px'
+  
   return (
     <Box sx={ styles.container }>
       <Box
@@ -13,7 +17,7 @@ const VideoBox = () => {
       />
       <Box sx={ styles.videoBg }>
         <ReactPlayer
-          controls height='500px' /*url='https://www.youtube.com/watch?v=-FeGaFY7KTQ'*/
+          controls height={ videoHeight } /*url='https://www.youtube.com/watch?v=-FeGaFY7KTQ'*/
           width='100%'
         />
       </Box>

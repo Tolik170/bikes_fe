@@ -1,24 +1,29 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 
-import TitleWithDescription from '../../../components/title-with-description/TitleWithDescription'
-import CardWithLink from '../../../components/card-with-link/CardWithLink'
+import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
+import CardWithLink from '~/components/card-with-link/CardWithLink'
+import AppLoader from '~/components/app-loader/AppLoader'
 
-import { popularItemsMock } from './PopularItemsCards'
-import { routesPath } from '../../../routes/routesPath'
-import { styles } from './PopularItems.styles'
+import { addCommas } from '~/utils/addCommas'
+import { routesPath } from '~/routes/routesPath'
+import { styles } from '~/containers/home-page/popular-items/PopularItems.styles'
 
-const PopularItems = () => {
+const PopularItems = ({ items }) => {
   const { t } = useTranslation()
 
-  const cards = popularItemsMock.map((item) => {
+  const cards = items.map((item) => {
     return (
       <CardWithLink
-        description={ item.price } img={ item.image } key={ item.name }
-        link={ '#' } sx={ styles.card } title={ item.name }
+        description={ `$ ${addCommas(item.price)}` }
+        img={ item.previewImage }
+        key={ item.name }
+        link={ `${routesPath.bikeDetails.path}/${item._id}` }
+        rating={ item.ratingsAverage }
+        sx={ styles.card }
+        title={ item.name }
       />
     )
   })
@@ -28,7 +33,7 @@ const PopularItems = () => {
       <TitleWithDescription title={ t('homePage.popularItems.title') } />
 
       <Box sx={ styles.cardsContainer }>
-        { cards }
+        { items.length ? cards : <AppLoader pageLoad size={ 50 } /> }
       </Box>
 
       <Button

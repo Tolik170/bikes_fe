@@ -8,7 +8,7 @@ export const styles = {
     mb: '-7px'
   },
   videoBg: {
-    minHeight: '400px',
+    maxHeight: { xs: '250px', sm: '600px' },
     height: '100%',
     padding: {
       md: '32px 81px',

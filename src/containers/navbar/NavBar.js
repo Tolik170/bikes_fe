@@ -1,38 +1,29 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-
-import { routesPath } from '../../routes/routesPath'
-
-import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
-
-import HashLink from '../../components/hash-link/HashLink'
-import Logo from '../logo/Logo'
-// import Sidebar from '~/containers/layout/sidebar/Sidebar'
+import Link from '@mui/material/Link'
 
 
-import { styles } from './NavBar.styles'
-import NavigationIcons from '../navigation-icons/NavigationIcons'
+import { routesPath } from '~/routes/routesPath'
+import Logo from '~/containers/logo/Logo'
+import NavigationIcons from '~/containers/navigation-icons/NavigationIcons'
+import { styles } from '~/containers/navbar/NavBar.styles'
 
 const Navbar = () => {
   const { t } = useTranslation()
   const [, setIsSidebarOpen] = useState(false)
   const navigationItems = Object.values(routesPath.navBar)
 
-
   const navigationList = navigationItems.map((item) => {
     return (
       <ListItem key={ item.label } sx={ styles.navItem }>
-        <Typography
-          component={ HashLink } sx={ styles.navItemText } to={ item.route }
-          variant='subtitle2'
-        >
+        <Link href={ item.route } sx={ styles.navItemText } >
           { t(`header.${item.label}`) }
-        </Typography>
+        </Link>
       </ListItem>
     )
   })
@@ -40,7 +31,7 @@ const Navbar = () => {
   return (
     <Box sx={ styles.header }>
       <Button
-        component={ Link } size='small' sx={ styles.logoButton }
+        component={ RouterLink } size='small' sx={ styles.logoButton }
         to={ routesPath.home.route }
       >
         <Logo />

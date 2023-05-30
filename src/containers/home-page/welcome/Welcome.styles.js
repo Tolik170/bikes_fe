@@ -19,6 +19,7 @@ export const styles = {
       xs: '400px'
     },
     backgroundImage: {
+      maxWidth: '1650px',
       width: '100%',
       md: `url(${backgroundImage})`,
       sm: `url(${backgroundImage})`,

@@ -14,7 +14,8 @@ export const styles = {
   },
   navItemText: {
     color: 'primary.900',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    typography: 'subtitle2'
   },
   navItem: {
     '&:last-child': {
