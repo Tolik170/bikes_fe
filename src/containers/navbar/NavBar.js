@@ -7,7 +7,6 @@ import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import Link from '@mui/material/Link'
 
-
 import { routesPath } from '~/routes/routesPath'
 import Logo from '~/containers/logo/Logo'
 import NavigationIcons from '~/containers/navigation-icons/NavigationIcons'
