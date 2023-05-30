@@ -5,7 +5,8 @@ export const styles = {
   },
   image: {
     width: '100%',
-    maxWidth: '500px',
+    maxWidth: '550px',
+    minWidth: '250px',
     maxHeight: '500px',
     overflow: 'auto',
     mr: '24px'

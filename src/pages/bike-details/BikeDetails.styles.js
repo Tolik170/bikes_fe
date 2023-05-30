@@ -29,7 +29,7 @@ export const styles = {
   },
   info: {
     width: '100%',
-    minWidth: '252px',
+    minWidth: '279px',
     maxWidth: '310px'
   },
   titleWithDescription: {

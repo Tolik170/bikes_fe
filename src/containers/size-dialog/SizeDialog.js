@@ -12,10 +12,10 @@ const SizeDialog = () => {
   return (
     <Box sx={ styles.container }>
       <Box sx={ styles.textContainer }>
-        <Typography>
+        <Typography sx={ styles.text }>
           { t('bikeDetails.sizeGuideModalTitle') }
         </Typography>
-        <Link href={ 'https://bestbikeadvice.com/gb/en/bikefit' } target='_blank'>
+        <Link href={ 'https://bestbikeadvice.com/gb/en/bikefit' } sx={ styles.text } target='_blank'>
           {  t('bikeDetails.sizeGuideModalLink') }
         </Link>
       </Box>

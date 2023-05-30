@@ -1,6 +1,6 @@
 export const styles = {
   container: {
-    mb: '100px'
+    mb: '50px'
   },
   titleBar: {
     maxWidth: '100%',
@@ -8,7 +8,7 @@ export const styles = {
     mb: '-7px'
   },
   videoBg: {
-    minHeight: '500px',
+    minHeight: '400px',
     height: '100%',
     padding: {
       md: '32px 81px',

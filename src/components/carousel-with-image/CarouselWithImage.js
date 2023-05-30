@@ -16,7 +16,7 @@ const CarouselWithImage = ({ items }) => {
   }
 
   const carouselWrapper = items.map((item, index) => (
-    <Box data-testid='carousel' key={ index } sx={ styles.feature }>
+    <Box key={ index } sx={ styles.feature }>
       <Box
         alt={ item.image } component='img' src={ item.image }
         sx={ styles.image }
@@ -41,7 +41,7 @@ const CarouselWithImage = ({ items }) => {
         activeStep={ activeStep }
         position='static'
         steps={ maxSteps }
-        sx={ { display: 'flex', justifyContent: 'center', pt: '16px', boxShadow: 'none' } }
+        sx={ styles.dots }
         variant='dots'
       />
     </>

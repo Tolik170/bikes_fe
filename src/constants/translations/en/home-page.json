@@ -1,6 +1,7 @@
 {
   "welcomeBlock": {
-    "title": "The All-New Diverge STR",
+    "title": "INTRODUCING THE NEW LEVO SL",
+    "description": "The Ultimate Trail Bike",
     "getStarted": "Shop Now",
     "learnMore": "Learn More"
   },
@@ -19,11 +20,11 @@
     },
     "rideApp": {
       "title": "Ride App",
-      "description": "Browse nearby rides led by cyclists in your community. Find the perfect ride, based on time, type, effort and distance. Plan an upcoming ride and invite others to join in the fun. You can decide if it’s public or private. Check the ride message board to stay up to date on pre-ride gossip and last minute route changes."
+      "description": "Browse nearby rides led by cyclists in your community. Find the perfect ride, based on time, type, effort and distance. Plan an upcoming ride and invite others to join in the fun. You can decide if it’s public or private."
     },
     "testTheBest": {
       "title": "Test The Best",
-      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. That a reader will be distracted by the readable content of a page, when looking at its layout."
     }
   }
 }

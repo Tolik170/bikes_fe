@@ -9,7 +9,7 @@ const AccordionWithImage = ({ items }) => {
   const [activeItemId, setActiveItemId] = useState(0)
 
   return (
-    <Box className='section' data-testid='accordion' sx={ styles.feature }>
+    <Box className='section' sx={ styles.feature }>
       <Box component='img' src={ items[activeItemId].image } sx={ styles.image } />
       <Accordions
         activeIndex={ activeItemId }

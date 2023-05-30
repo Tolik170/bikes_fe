@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next'
 
 import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import HashLink from '../../../components/hash-link/HashLink'
+import HashLink from '~/components/hash-link/HashLink'
+import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 
 import { styles } from './Welcome.styles'
 import { routesPath } from '../../../routes/routesPath'
@@ -13,19 +13,21 @@ const Welcome = () => {
 
   return (
     <Box className='section' sx={ styles.container }>
-      <Typography sx={ styles.title }>
-        { t('homePage.welcomeBlock.title') }
-      </Typography>
+      <TitleWithDescription
+        description={ t('homePage.welcomeBlock.description') }
+        sx={ styles.titleWithDescription }
+        title={ t('homePage.welcomeBlock.title') }
+      />
       <Box sx={ styles.buttonsContainer }>
         <Button
-          component={ HashLink } sx={ styles.getStartBtn } to={ routesPath.catalog.route } 
-          variant='light'
+          component={ HashLink } sx={ styles.getStartBtn } to={ routesPath.catalog.route }
+          // variant='light'
         >
           { t('homePage.welcomeBlock.getStarted') }
         </Button>
 
         <Button
-          component={ HashLink } sx={ styles.learnMoreBtn } to={ routesPath.catalog.route } 
+          component={ HashLink } sx={ styles.learnMoreBtn } to={ routesPath.catalog.route }
           variant='contained'
         >
           { t('homePage.welcomeBlock.learnMore') }

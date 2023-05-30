@@ -1,57 +1,63 @@
-import backgroundImage from '../../../assets/images/welcomeBackground.jpg'
-import { commonShadow } from '../../../styles/app-theme/custom-shadows'
+import backgroundImage from '~/assets/images/welcomeBackground1.jpg'
+import { commonShadow } from '~/styles/app-theme/custom-shadows'
 
-const gradient = 'radial-gradient(ellipse at top, rgba(192, 229, 228, 0.4), transparent 80%'
 const btn = {
-  padding: '15px 40px',
+  padding: { xs: '10px 20px', sm: '15px 40px' },
   boxShadow: commonShadow,
-  textTransform: 'none',
-  marginRight: '20px'
+  backgroundColor: 'basic.black',
 }
 
 export const styles = {
   container: {
     flexDirection: 'column',
-    alignItems: 'start',
-    padding: '0 100px',
+    alignItems: 'center',
+    justifyContent: 'start',
+    pt: '50px',
     minHeight: {
       md: '800px',
       sm: '500px',
       xs: '400px'
     },
-    maxHeight: '800px',
     backgroundImage: {
       width: '100%',
-      md: `url(${backgroundImage}), ${gradient})`,
-      sm: `url(${backgroundImage}), ${gradient})`,
-      xs: `url(${backgroundImage}), ${gradient})`
+      md: `url(${backgroundImage})`,
+      sm: `url(${backgroundImage})`,
+      xs: `url(${backgroundImage})`
     },
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat'
   },
-  title: {
-    typography: {
-      md: 'h3',
-      sm: 'h3',
-      xs: 'h4'
+  titleWithDescription: {
+    container: {
+      textAlign: 'center',
+      mb: '10px',
     },
-    px: '24px',
-    maxWidth: '450px',
-    marginBottom: '32px',
-    color: 'basic.white',
-    textAlign: 'left'
+    title: {
+      typography: 'body2',
+      color: 'basic.white',
+    },
+    description: {
+      typography: { xs: 'h5', sm: 'h3' },
+      color: 'basic.white'
+    }
   },
   buttonsContainer: {
-    display: 'flex'
+    display: 'flex',
+    columnGap: '20px'
   },
   learnMoreBtn: {
-    ...btn
+    ...btn,
+    border: '1px solid white',
+    '&:hover': {
+      backgroundColor: 'basic.black'
+    }
   },
   getStartBtn: {
     ...btn,
+    backgroundColor: 'basic.white',
     '&:hover': {
-      backgroundColor: 'primary.200'
+      backgroundColor: 'basic.grey'
     }
   }
 }

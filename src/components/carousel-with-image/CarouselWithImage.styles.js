@@ -4,8 +4,7 @@ export const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    px: '16px',
-    mb: '16px'
+    px: '16px'
   },
   image: {
     width: '100%',
@@ -18,7 +17,13 @@ export const styles = {
     justifyContent: 'space-around',
     minHeight: '144px',
     backgroundColor: 'primary.900',
-    borderRadius: '6px',
     p: '16px'
+  },
+  dots: {
+    display: 'flex',
+    justifyContent: 'center',
+    boxShadow: 'none',
+    backgroundColor: 'backgroundColor',
+    mb: '50px'
   }
 }

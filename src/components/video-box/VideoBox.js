@@ -13,7 +13,7 @@ const VideoBox = () => {
       />
       <Box sx={ styles.videoBg }>
         <ReactPlayer
-          controls height='600px' /*url='https://www.youtube.com/watch?v=-FeGaFY7KTQ'*/
+          controls height='500px' /*url='https://www.youtube.com/watch?v=-FeGaFY7KTQ'*/
           width='100%'
         />
       </Box>

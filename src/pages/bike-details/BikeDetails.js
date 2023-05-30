@@ -82,6 +82,7 @@ const BikesDetails = () => {
 
   const carouselSettings = {
     autoplayInterval: 5000,
+    speed: 700,
     slidesToShow: 1,
     defaultControlsConfig: {
       pagingDotsStyle: styles.dotStyles(isDesktop)
@@ -97,7 +98,7 @@ const BikesDetails = () => {
         <AppCarousel settings={ carouselSettings }>
           { carouselImages }
         </AppCarousel>
-
+        
         <Box sx={ styles.info }>
           <TitleWithDescription
             description={ `$ ${addCommas(bike.price)}` }

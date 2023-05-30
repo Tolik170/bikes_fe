@@ -2,7 +2,7 @@ import { mainShadow, commonShadow, commonHoverShadow } from '../../styles/app-th
 
 export const styles = {
   noShowMoreIcon: {
-    root: { maxWidth: { md: '420px', sm: '229px' } },
+    root: { maxWidth: { md: '570px', sm: '300px' } },
     accordion: {
       borderRadius: '6px',
       mb: { md: '16px', sm: '8px' }
@@ -18,12 +18,13 @@ export const styles = {
       }
     },
     title: {
-      fontSize: { md: '20px', sm: '13px' },
+      fontSize: { md: '20px', sm: '12px' },
       lineHeight: { md: '28px', sm: '18px' },
-      color: 'primary.900'
+      color: 'primary.900',
+      marginBottom: { xs: '10px', sm: 0 }
     },
     description: {
-      fontSize: { md: '14px', sm: '8px' },
+      fontSize: { md: '14px', sm: '12px' },
       lineHeight: { md: '24px', sm: '12px' },
       color: 'basic.white'
     },
