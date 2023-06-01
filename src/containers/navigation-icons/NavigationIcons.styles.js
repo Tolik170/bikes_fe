@@ -3,6 +3,7 @@ export const styles = {
     mr: { xs: '14px', sm: '20px', md: '32px' },
     display: 'flex',
     alignItems: 'center',
+    columnGap: '15px',
     '&>.MuiIconButton-root': {
       p: { sm: '12px', md: '7px', lg: '12px' }
     }

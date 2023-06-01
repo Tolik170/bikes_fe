@@ -6,6 +6,7 @@
   "orderNow": "Order Now",
   "addToCart": "Add To Cart",
   "bikeDescription": "Bike Description",
+  "addedToCart": "Successfully added to cart!",
   "techSpecifications": {
     "title": "Technical Specification",
     "frame": "FRAME",

@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
@@ -7,21 +7,23 @@ import LanguageIcon from '@mui/icons-material/Language'
 import LoginIcon from '@mui/icons-material/Login'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import MenuIcon from '@mui/icons-material/Menu'
+import Badge from '@mui/material/Badge'
+
+import { useModalContext } from '~/context/modal-context'
+import { useCart } from '~/hooks/use-cart'
+import Cart from '~/containers/cart/Cart'
 
 import { styles } from '~/containers/navigation-icons/NavigationIcons.styles'
 
 const NavigationIcons = ({ setIsSidebarOpen }) => {
   const { t } = useTranslation()
+  const { openModal } = useModalContext()
+  const { cartItems } = useCart()
+  const itemsCount = useMemo(() => cartItems.reduce((acc, item) => acc + item.quantity, 0), [cartItems])
 
-  //const { openModal } = useContext(ModalContext)
-
-  //   const openLoginDialog = useCallback(() => {
-  //     openModal({ component: <LoginDialog /> })
-  //   }, [openModal])
-
-  const openLoginDialog = useCallback(() => {
-    console.log('open login dialog')
-  }, [])
+  const openWishList = useCallback(() => {
+    openModal({ component: <Cart /> })
+  }, [openModal])
 
   return (
     <Box sx={ styles.iconBox }>
@@ -31,14 +33,16 @@ const NavigationIcons = ({ setIsSidebarOpen }) => {
         </IconButton>
       </Tooltip>
 
-      <Tooltip arrow title={ t('iconsTooltip.cart') }>
-        <IconButton>
-          <ShoppingCartOutlinedIcon color='primary' />
-        </IconButton>
-      </Tooltip>
+      <Badge badgeContent={ itemsCount } color='primary'>
+        <Tooltip arrow title={ t('iconsTooltip.cart') }>
+          <IconButton onClick={ openWishList }>
+            <ShoppingCartOutlinedIcon color='primary' />
+          </IconButton>
+        </Tooltip>
+      </Badge>
 
       <Tooltip arrow title={ t('iconsTooltip.login') }>
-        <IconButton onClick={ openLoginDialog } >
+        <IconButton>
           <LoginIcon color='primary' />
         </IconButton>
       </Tooltip>

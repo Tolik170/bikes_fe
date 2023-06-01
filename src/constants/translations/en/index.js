@@ -6,6 +6,7 @@ import footer from './footer.json'
 import cookiePolicyPage from './cookie-policy-page.json'
 import catalogPage from './catalog-page.json'
 import bikeDetails from './bike-details.json'
+import cart from './cart.json'
 
 const en = {
   translations: {
@@ -16,7 +17,8 @@ const en = {
     footer,
     cookiePolicyPage,
     catalogPage,
-    bikeDetails
+    bikeDetails,
+    cart
   }
 }
 

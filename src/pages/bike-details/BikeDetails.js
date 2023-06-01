@@ -8,7 +8,9 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import StraightenIcon from '@mui/icons-material/Straighten'
 
 import { useModalContext } from '~/context/modal-context'
+import { useSnackBarContext } from '~/context/snackbar-context'
 import { bikesService } from '~/services/bikes-service'
+import { useCart } from '~/hooks/use-cart'
 import useAxios from '~/hooks/use-axios'
 import useBreakpoints from '~/hooks/use-breakpoints'
 import AppLoader from '~/components/app-loader/AppLoader'
@@ -21,19 +23,24 @@ import TechSpecification from '~/containers/bike-details/TechSpecification'
 import SizeDialog from '~/containers/size-dialog/SizeDialog'
 
 import { errorRoutes } from '~/routes/errorRoutes'
-import { styles } from '~/pages/bike-details/BikeDetails.styles'
 import { addCommas } from '~/utils/addCommas'
+import { snackbarVariants } from '~/constants/constants'
+import { styles } from '~/pages/bike-details/BikeDetails.styles'
 
 const BikesDetails = () => {
   const { t } = useTranslation()
   const { id = '' } = useParams()
   const { isDesktop, isMobile } = useBreakpoints()
   const { openModal } = useModalContext()
-  const [toggle, setToggle] = useState(49)
+  const { cartOperations, isInCart } = useCart()
+  const { setAlert } = useSnackBarContext()
+  const [sizeToggle, setSizeToggle] = useState(49)
   const navigate = useNavigate()
 
+  const { addToCart } = cartOperations
+
   const onToggleChange = (_, value) => {
-    setToggle(value)
+    setSizeToggle(value)
   }
 
   const getBikeById = useCallback(() => bikesService.getBikeById(id), [id])
@@ -48,18 +55,37 @@ const BikesDetails = () => {
     return <AppLoader pageLoad size={ 70 } />
   }
 
+  const onAddToCart = () => {
+    const newCart = {
+      _id: bike._id,
+      category: bike.category,
+      image: bike.previewImage,
+      name: bike.name,
+      size: sizeToggle,
+      quantity: 1,
+      price: bike.price
+    }
+
+    addToCart(newCart)
+
+    setAlert({
+      severity: snackbarVariants.success,
+      message: 'bikeDetails.addedToCart'
+    })
+  }
+
   const openSizeGuideDialog = () => {
     openModal({ component: <SizeDialog /> })
   }
 
   const carouselImages = bike.images.map((image) => (
     <Box
-      alt='item image' component='img' key={ image }
+      alt='bike image' component='img' key={ image }
       src={ image } sx={ styles.img }
     />
   ))
 
-  const sizeToggle = bike.sizes.map((size) => (
+  const toggleBtn = bike.sizes.map((size) => (
     <ToggleButton
       disableRipple key={ size } sx={ styles.sizeToggle }
       value={ size }
@@ -74,7 +100,11 @@ const BikesDetails = () => {
         { t('bikeDetails.orderNow') }
       </AppButton>
 
-      <AppButton fullWidth size='medium' variant='contained'>
+      <AppButton
+        disabled={ Boolean(isInCart(bike._id)) } fullWidth onClick={ onAddToCart }
+        size='medium'
+        variant='contained'
+      >
         { t('bikeDetails.addToCart') }
       </AppButton>
     </Box>
@@ -117,9 +147,9 @@ const BikesDetails = () => {
 
           <ToggleButtonGroup
             exclusive onChange={ onToggleChange } sx={ styles.sizeToggleGroup }
-            value={ toggle }
+            value={ sizeToggle }
           >
-            { sizeToggle }
+            { toggleBtn }
           </ToggleButtonGroup>
 
           <Box sx={ styles.sizeGuideContainer }>

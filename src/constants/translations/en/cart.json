@@ -1,0 +1,11 @@
+{
+  "table": {
+    "product": "Product",
+    "size": "Size",
+    "quantity": "Quantity",
+    "price": "Price"
+  },
+  "title": "Cart",
+  "total": "Total Price:",
+  "goToCheckout": "Go to checkout"
+}
