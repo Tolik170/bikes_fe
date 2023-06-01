@@ -18,7 +18,7 @@ export const styles = {
     borderTop: `2px solid ${palette.primary[700]}`,
     pt: '20px'
   },
-  totalPriceWrapper: { display: 'flex', columnGap: '15px' },
+  totalPriceWrapper: { display: { sm: 'flex' }, columnGap: '15px' },
   total: { typography: 'midTitle' },
   price: { color: 'primary.600', typography: 'subtitle1' }
   

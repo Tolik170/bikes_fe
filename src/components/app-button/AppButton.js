@@ -11,6 +11,7 @@ const AppButton = ({
   size = 'large',
   ...props
 }) => {
+  console.log(size)
   const loader = <AppLoader size={ 20 } sx={ { opacity: '0.6', color: 'basic.black' } } />
 
   return (

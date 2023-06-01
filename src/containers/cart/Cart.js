@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import TableCell from '@mui/material/TableCell'
 
 import { useCart } from '~/hooks/use-cart'
+import useBreakpoints from '~/hooks/use-breakpoints'
 import CartItemRow from '~/containers/cart/CartItemRow'
 import AppTable from '~/components/app-table/AppTable'
 import AppButton from '~/components/app-button/AppButton'
@@ -13,6 +14,7 @@ import { columns } from '~/containers/cart/Cart.constants'
 import { styles } from '~/containers/cart/Cart.styles'
 
 const Cart = () => {
+  const { isMobile } = useBreakpoints()
   const { t } = useTranslation()
   const { cartItems, cartOperations } = useCart()
   const { getTotalPrice, changeQuantity, removeFromCart } = cartOperations
@@ -56,7 +58,7 @@ const Cart = () => {
           </Typography>) }
         </Box>
 
-        <AppButton size='medium'>
+        <AppButton size={ isMobile ? 'small' : 'medium' }>
           { t('cart.goToCheckout') }
         </AppButton>
       </Box>

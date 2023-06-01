@@ -9,7 +9,7 @@ const button = {
     },
     sizeSmall: {
       fontSize: '12px',
-      padding: '6px 16px'
+      padding: '5px 16px'
     },
     sizeMedium: {
       padding: '10px 24px'
