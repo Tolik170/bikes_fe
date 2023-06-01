@@ -17,7 +17,8 @@ export const styles = {
   }),
   img: {
     width: '100%',
-    maxHeight: '300px'
+    maxHeight: '300px',
+    aspectRatio: '4/3',
   },
   rating: {
     p: 0, 

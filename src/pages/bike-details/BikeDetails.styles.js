@@ -17,6 +17,7 @@ export const styles = {
   img: {
     width: '100%',
     p: '30px 35px',
+    aspectRatio: 'auto',
     backgroundColor: 'basic.lightGrey'
   },
   dotStyles: (isDesktop) => ({
