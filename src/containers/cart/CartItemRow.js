@@ -3,7 +3,7 @@ import TableRow from '@mui/material/TableRow'
 import TableCell from '@mui/material/TableCell'
 import Typography from '@mui/material/Typography'
 
-import { regex } from '~/constants/constants'
+import { regex } from '~/constants/regex'
 import { styles } from '~/containers/cart/Cart.styles'
 
 const CartItemRow = ({ item, columns, rowActions, changeQuantity }) => {
@@ -11,7 +11,7 @@ const CartItemRow = ({ item, columns, rowActions, changeQuantity }) => {
 
   const onChange = (e) => {
     if (!e.target.value) setCount(1)
-    if (regex.cart.test(e.target.value)) setCount(Number(e.target.value))
+    if (regex.cartQuantity.test(e.target.value)) setCount(Number(e.target.value))
   }
 
   const tableCells = columns.map(({ field, calculatedCellValue, sx }) => {

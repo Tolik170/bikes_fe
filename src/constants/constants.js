@@ -7,7 +7,3 @@ export const snackbarVariants = {
   success: 'success',
   warning: 'warning'
 }
-
-export const regex = {
-  cart: /^(?:[1-9]|10)$/
-}

@@ -31,6 +31,9 @@ const button = {
       color: palette.basic.white,
       '&:hover': {
         backgroundColor: palette.primary[400]
+      },
+      '&:disabled': {
+        backgroundColor: palette.basic.grey,
       }
     },
     outlined: {

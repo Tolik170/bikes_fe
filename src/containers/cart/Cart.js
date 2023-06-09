@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell'
 import { useCart } from '~/hooks/use-cart'
 import useBreakpoints from '~/hooks/use-breakpoints'
 import CartItemRow from '~/containers/cart/CartItemRow'
+import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 import AppTable from '~/components/app-table/AppTable'
 import AppButton from '~/components/app-button/AppButton'
 
@@ -47,16 +48,13 @@ const Cart = () => {
 
       <AppTable bodyRows={ bodyRows } headCells={ headCells } sx={ styles.table } />
 
-      <Box sx={ styles.totalAndBtn }>
-        <Box sx={ styles.totalPriceWrapper }>
-          <Typography sx={ styles.total }>
-            { t('cart.total') }
-          </Typography>
-
-          { cartItems.length && (<Typography sx={ styles.price }>
-            { `$ ${addCommas(getTotalPrice())}` }
-          </Typography>) }
-        </Box>
+      <Box sx={ styles.TotalAndBtn }>
+        <TitleWithDescription
+          description={ `$ ${addCommas(getTotalPrice())}` }
+          sx={ styles.totalPrice }
+          title={ t('cart.total') }
+        />
+        
 
         <AppButton size={ isMobile ? 'small' : 'medium' }>
           { t('cart.goToCheckout') }

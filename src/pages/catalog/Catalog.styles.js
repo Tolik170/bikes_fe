@@ -5,7 +5,7 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: 'backgroundColor',
-    py: '80px'
+    py: '50px'
   },
   titleWithDescription: {
     container: { mb: '40px', textAlign: 'center' },

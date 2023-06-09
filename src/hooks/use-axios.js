@@ -1,6 +1,13 @@
 import { useState, useEffect, useCallback } from 'react'
 
-const useAxios = ({ service, fetchOnMount = true, defaultResponse = null, onResponse, onResponseError }) => {
+const useAxios = ({
+  service,
+  fetchOnMount = true,
+  defaultResponse = null,
+  clearResponse = false,
+  onResponse,
+  onResponseError
+}) => {
   const [response, setResponse] = useState(defaultResponse)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(fetchOnMount)
@@ -8,6 +15,7 @@ const useAxios = ({ service, fetchOnMount = true, defaultResponse = null, onResp
   const fetchData = useCallback(
     async (data) => {
       try {
+        clearResponse && setResponse(defaultResponse)
         setLoading(true)
         const res = await service(data)
         setResponse(res.data)
@@ -23,7 +31,8 @@ const useAxios = ({ service, fetchOnMount = true, defaultResponse = null, onResp
         setLoading(false)
       }
     },
-    [service, onResponse, onResponseError]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [service, onResponse, onResponseError, clearResponse]
   )
 
   useEffect(() => {

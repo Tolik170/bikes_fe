@@ -18,6 +18,24 @@
     "road": "Road",
     "turboElectric": "Turbo E"
   },
+  "labels": {
+    "email": "Email",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phoneNumber": "Phone number",
+    "country": "Country",
+    "city": "City"
+  },
+  "errorMessages": {
+    "emailValid": "Email should be of the following format: “local-part@domain.com”",
+    "emptyField": "This field cannot be empty",
+    "nameLength": "This field cannot be longer than 30 characters",
+    "nameAlphabeticOnly": "This field can contain alphabetic characters only",
+    "shortText": "This text is too short",
+    "longText": "This text is too long",
+    "numbersOnly": "Please enter a valid number",
+    "positiveNumbersOnly": "Please enter a positive number"
+  },
   "reviews":{
     "starsCount_one": "{{count}} star",
     "starsCount_other": "{{count}} stars",

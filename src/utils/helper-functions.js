@@ -11,3 +11,7 @@ export const parseQueryParams = (searchParams, defaultFilters) => {
   })
   return filtersFromQuery
 }
+
+export const getEmptyValues = (initialValues, defaultValue) => {
+  return Object.keys(initialValues).reduce((acc, key) => ({ ...acc, [key]: defaultValue }), {})
+}

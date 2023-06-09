@@ -1,0 +1,11 @@
+{
+  "title": "Checkout Process",
+  "labels": {
+    "cities": "City",
+    "warehouse": "Warehouse"
+  },
+  "info": {
+    "title": "Order Summary",
+    "payment": "Proceed to payment"
+  }
+}

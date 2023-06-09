@@ -7,7 +7,7 @@ export const styles = {
   headCells: { typography: 'midTitle' },
   bodyRow: { borderTop: `1px solid ${palette.primary[200]}` },
   tableCell: { typography: 'body1' },
-  imgCell: { maxWidth: '150px' },
+  imgCell: { maxWidth: '150px', minHeight: '104px' },
   priceCell: { minWidth: '112px' },
   nameCell: { textDecoration: 'none', color: 'primary.900', fontWeight: 500 },
   actionCellText: { cursor: 'pointer', color: 'primary.600' },
@@ -18,8 +18,10 @@ export const styles = {
     borderTop: `2px solid ${palette.primary[700]}`,
     pt: '20px'
   },
-  totalPriceWrapper: { display: { sm: 'flex' }, columnGap: '15px' },
-  total: { typography: 'midTitle' },
-  price: { color: 'primary.600', typography: 'subtitle1' }
-  
+  TotalAndBtn: { display: 'flex', justifyContent: 'space-between' },
+  totalPrice: {
+    container: { display: { sm: 'flex' }, columnGap: '15px' },
+    title: { typography: 'midTitle' },
+    description: { color: 'primary.600', typography: 'subtitle1' }
+  }
 }
