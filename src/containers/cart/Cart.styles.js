@@ -18,7 +18,6 @@ export const styles = {
     borderTop: `2px solid ${palette.primary[700]}`,
     pt: '20px'
   },
-  TotalAndBtn: { display: 'flex', justifyContent: 'space-between' },
   totalPrice: {
     container: { display: { sm: 'flex' }, columnGap: '15px' },
     title: { typography: 'midTitle' },

@@ -2,20 +2,21 @@ import { useTranslation } from 'react-i18next'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import TableCell from '@mui/material/TableCell'
+import Link from '@mui/material/Link'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
 import { useCart } from '~/hooks/use-cart'
-import useBreakpoints from '~/hooks/use-breakpoints'
 import CartItemRow from '~/containers/cart/CartItemRow'
 import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 import AppTable from '~/components/app-table/AppTable'
-import AppButton from '~/components/app-button/AppButton'
 
 import { addCommas } from '~/utils/addCommas'
 import { columns } from '~/containers/cart/Cart.constants'
 import { styles } from '~/containers/cart/Cart.styles'
+import { routesPath } from '~/routes/routesPath'
+import DirectionLink from '~/components/direction-link/DirectionLink'
 
 const Cart = () => {
-  const { isMobile } = useBreakpoints()
   const { t } = useTranslation()
   const { cartItems, cartOperations } = useCart()
   const { getTotalPrice, changeQuantity, removeFromCart } = cartOperations
@@ -48,7 +49,7 @@ const Cart = () => {
 
       <AppTable bodyRows={ bodyRows } headCells={ headCells } sx={ styles.table } />
 
-      <Box sx={ styles.TotalAndBtn }>
+      <Box sx={ styles.totalAndBtn }>
         <TitleWithDescription
           description={ `$ ${addCommas(getTotalPrice())}` }
           sx={ styles.totalPrice }
@@ -56,9 +57,13 @@ const Cart = () => {
         />
         
 
-        <AppButton size={ isMobile ? 'small' : 'medium' }>
-          { t('cart.goToCheckout') }
-        </AppButton>
+        <Link href={ routesPath.checkout.route } >
+          <DirectionLink
+            after={ <ArrowForwardIcon fontSize='small' /> }
+            sx={ { mb: 0 } }
+            title={ 'Go to checkout' }
+          />
+        </Link>
       </Box>
     </Box>
   )

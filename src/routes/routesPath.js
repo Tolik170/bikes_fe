@@ -8,5 +8,8 @@ export const routesPath = {
   },
   bikeDetails: { route: 'bike-details/:id', path: '/bike-details' },
   privacyPolicy: { route: '/privacy-policy' },
-  checkout: { route: '/checkout' }
+  checkout: { route: '/checkout' },
+  error: {
+    notFound: { route: '404', path: '/error/404' }
+  }
 }

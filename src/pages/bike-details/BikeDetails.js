@@ -6,6 +6,7 @@ import { Container, Typography } from '@mui/material'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import StraightenIcon from '@mui/icons-material/Straighten'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
 import { useModalContext } from '~/context/modal-context'
 import { useSnackBarContext } from '~/context/snackbar-context'
@@ -17,12 +18,13 @@ import AppLoader from '~/components/app-loader/AppLoader'
 import AppCarousel from '~/components/app-carousel/AppCarousel'
 import AppRatingLarge from '~/components/app-rating-large/AppRatingLarge'
 import AppButton from '~/components/app-button/AppButton'
+import DirectionLink from '~/components/direction-link/DirectionLink'
 import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 import ShowMoreCollapse from '~/components/show-more-collapse/ShowMoreCollapse'
 import TechSpecification from '~/containers/bike-details/TechSpecification'
 import SizeDialog from '~/containers/size-dialog/SizeDialog'
 
-import { errorRoutes } from '~/routes/errorRoutes'
+import { routesPath } from '~/routes/routesPath'
 import { addCommas } from '~/utils/addCommas'
 import { snackbarVariants } from '~/constants/constants'
 import { styles } from '~/pages/bike-details/BikeDetails.styles'
@@ -44,7 +46,7 @@ const BikesDetails = () => {
   }
 
   const getBikeById = useCallback(() => bikesService.getBikeById(id), [id])
-  const responseError = useCallback(() => navigate(errorRoutes.notFound.path), [navigate])
+  const responseError = useCallback(() => navigate(routesPath.error.notFound.path), [navigate])
 
   const { response: bike, loading: bikeLoading } = useAxios({
     service: getBikeById,
@@ -124,6 +126,12 @@ const BikesDetails = () => {
 
   return (
     <Container sx={ styles.container }>
+      <DirectionLink
+        before={ <ArrowBackIcon fontSize='small' /> }
+        linkTo={ routesPath.catalog.route }
+        sx={ { justifyContent: 'start' } }
+        title={ t('bikeDetails.goToCatalog') }
+      />
       <Box sx={ styles.imgWithInfo }>
         <AppCarousel settings={ carouselSettings }>
           { carouselImages }
