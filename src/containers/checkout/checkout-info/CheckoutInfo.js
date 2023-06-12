@@ -1,14 +1,16 @@
 import { useTranslation } from 'react-i18next'
 import Box from '@mui/material/Box'
+import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 import AppButton from '~/components/app-button/AppButton'
 import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 
 import { addCommas } from '~/utils/addCommas'
+import { routesPath } from '~/routes/routesPath'
 import { styles } from '~/containers/checkout/checkout-info/CheckoutInfo.styles'
 
-const CheckoutInfo = ({ items, getTotalPrice }) => {
+const CheckoutInfo = ({ items, getTotalPrice, loading }) => {
   const { t } = useTranslation()
 
   const bikeOptions = ['category', 'size', 'quantity']
@@ -26,9 +28,9 @@ const CheckoutInfo = ({ items, getTotalPrice }) => {
       <Box component='img' src={ item.image } sx={ styles.img } />
 
       <Box>
-        <Typography sx={ styles.name }>
+        <Link href={ `${routesPath.bikeDetails.path}/${item._id}` } sx={ styles.name }>
           { item.name }
-        </Typography>
+        </Link>
 
         { infoBlock(item) }
       </Box>
@@ -59,7 +61,10 @@ const CheckoutInfo = ({ items, getTotalPrice }) => {
             title={ t('cart.total') }
           />
 
-          <AppButton size='medium' type='submit' variant='containedLight'>
+          <AppButton
+            loading={ loading } size='medium' sx={ { minWidth: '193px' } }
+            type='submit' variant='containedLight'
+          >
             { t('checkout.info.payment') }
           </AppButton>
         </Box>

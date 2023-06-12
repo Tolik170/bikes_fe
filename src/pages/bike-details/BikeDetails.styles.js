@@ -54,7 +54,10 @@ export const styles = {
       md: 'repeat(3, minmax(20px, 1fr))'
     },
     gridAutoRows: '30px',
-    gap: '10px'
+    gap: '10px',
+    '& .MuiToggleButtonGroup-grouped:not(:first-of-type)': {
+      ml: 0
+    }
   },
   sizeToggle: {
     typography: 'body2',

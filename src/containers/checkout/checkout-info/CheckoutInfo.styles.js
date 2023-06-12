@@ -26,7 +26,13 @@ export const styles = {
     columnGap: '30px'
   },
   img: { maxWidth: '150px' },
-  name: { typography: 'body1', fontWeight: '500' },
+  name: {
+    typography: 'body1',
+    fontWeight: '500',
+    cursor: 'pointer',
+    textDecoration: 'none',
+    color: 'primary.900'
+  },
   titleWithDescription: {
     container: { display: 'flex', columnGap: '5px', color: 'primary.600' }
   },
@@ -36,7 +42,7 @@ export const styles = {
     flexDirection: 'column',
     rowGap: '30px',
     maxHeight: '240px',
-    overflow: 'auto',
+    overflow: 'auto'
   },
   borderLine: { borderTop: `1px solid ${palette.primary[200]}` },
   totalAndBtn: {

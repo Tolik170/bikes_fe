@@ -4,5 +4,11 @@ export const URL = {
   },
   delivery: {
     get: '/delivery'
+  },
+  orders: {
+    get: 'orders'
+  },
+  payment: {
+    get: 'payment'
   }
 }
