@@ -7,6 +7,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
 import { useCart } from '~/hooks/use-cart'
 import CartItemRow from '~/containers/cart/CartItemRow'
+import DirectionLink from '~/components/direction-link/DirectionLink'
 import TitleWithDescription from '~/components/title-with-description/TitleWithDescription'
 import AppTable from '~/components/app-table/AppTable'
 
@@ -14,7 +15,6 @@ import { addCommas } from '~/utils/addCommas'
 import { columns } from '~/containers/cart/Cart.constants'
 import { styles } from '~/containers/cart/Cart.styles'
 import { routesPath } from '~/routes/routesPath'
-import DirectionLink from '~/components/direction-link/DirectionLink'
 
 const Cart = () => {
   const { t } = useTranslation()
@@ -51,7 +51,7 @@ const Cart = () => {
 
       <Box sx={ styles.totalAndBtn }>
         <TitleWithDescription
-          description={ `$ ${addCommas(getTotalPrice())}` }
+          description={ cartItems.length && `$ ${addCommas(getTotalPrice())}` }
           sx={ styles.totalPrice }
           title={ t('cart.total') }
         />

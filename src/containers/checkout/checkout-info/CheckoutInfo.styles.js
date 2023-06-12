@@ -44,7 +44,7 @@ export const styles = {
     maxHeight: '240px',
     overflow: 'auto'
   },
-  borderLine: { borderTop: `1px solid ${palette.primary[200]}` },
+  borderLine: { borderTop: `2px solid ${palette.primary[200]}` },
   totalAndBtn: {
     display: 'flex',
     justifyContent: 'space-between',

@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
@@ -10,20 +10,33 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Badge from '@mui/material/Badge'
 
 import { useModalContext } from '~/context/modal-context'
+import { useSnackBarContext } from '~/context/snackbar-context'
 import { useCart } from '~/hooks/use-cart'
 import Cart from '~/containers/cart/Cart'
 
+import { snackbarVariants } from '~/constants/constants'
 import { styles } from '~/containers/navigation-icons/NavigationIcons.styles'
 
 const NavigationIcons = ({ setIsSidebarOpen }) => {
   const { t } = useTranslation()
-  const { openModal } = useModalContext()
+  const { setAlert } = useSnackBarContext()
+  const { openModal, closeModal } = useModalContext()
   const { cartItems } = useCart()
   const itemsCount = useMemo(() => cartItems.reduce((acc, item) => acc + item.quantity, 0), [cartItems])
 
   const openWishList = useCallback(() => {
-    openModal({ component: <Cart /> })
-  }, [openModal])
+    itemsCount
+      ? openModal({ component: <Cart /> })
+      : setAlert({
+        severity: snackbarVariants.info,
+        message: 'cart.emptyCart',
+        duration: 5000
+      })
+  }, [openModal, setAlert, itemsCount])
+
+  useEffect(() => {
+    !itemsCount && closeModal()
+  }, [closeModal, itemsCount])
 
   return (
     <Box sx={ styles.iconBox }>

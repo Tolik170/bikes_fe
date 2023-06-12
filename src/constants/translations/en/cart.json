@@ -7,5 +7,6 @@
   },
   "title": "Cart",
   "total": "Total Price:",
-  "goToCheckout": "Go to checkout"
+  "goToCheckout": "Go to checkout",
+  "emptyCart": "Your cart is Empty. Please, Add something to open it!"
 }

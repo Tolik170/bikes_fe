@@ -1,5 +1,6 @@
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 
@@ -14,12 +15,14 @@ import TitleWithDescription from '~/components/title-with-description/TitleWithD
 
 import { createOrderData, isObjectEmpty } from '~/utils/helper-functions'
 import { checkoutValidations, initialValues } from '~/utils/validations/checkout'
+import { routesPath } from '~/routes/routesPath'
 import { styles } from '~/pages/checkout/Checkout.styles'
 
 const Checkout = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const { cartItems, cartOperations } = useCart()
-  const { getTotalPrice } = cartOperations
+  const { getTotalPrice, clearCart } = cartOperations
 
   const createOrder = useCallback((data) => orderService.createOrder(data), [])
   const getFondyCheckout = useCallback((params) => paymentService.getFondyCheckout(params), [])
@@ -44,7 +47,9 @@ const Checkout = () => {
       })
 
       if (paymentCheckout.data.checkout_url) {
+        navigate(routesPath.catalog.route)
         window.open(paymentCheckout.data.checkout_url)
+        clearCart()
       }
     }
   }

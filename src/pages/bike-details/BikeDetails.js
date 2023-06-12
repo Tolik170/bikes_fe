@@ -58,6 +58,13 @@ const BikesDetails = () => {
   }
 
   const onAddToCart = () => {
+    if (!sizeToggle) {
+      return setAlert({
+        severity: snackbarVariants.warning,
+        message: 'bikeDetails.chooseSize'
+      })
+    }
+
     const newCart = {
       _id: bike._id,
       category: bike.category,
@@ -103,7 +110,9 @@ const BikesDetails = () => {
       </AppButton>
 
       <AppButton
-        disabled={ Boolean(isInCart(bike._id)) } fullWidth onClick={ onAddToCart }
+        disabled={ Boolean(isInCart(bike._id)) }
+        fullWidth
+        onClick={ onAddToCart }
         size='medium'
         variant='contained'
       >
@@ -136,7 +145,7 @@ const BikesDetails = () => {
         <AppCarousel settings={ carouselSettings }>
           { carouselImages }
         </AppCarousel>
-        
+
         <Box sx={ styles.info }>
           <TitleWithDescription
             description={ `$ ${addCommas(bike.price)}` }
@@ -161,10 +170,7 @@ const BikesDetails = () => {
           </ToggleButtonGroup>
 
           <Box sx={ styles.sizeGuideContainer }>
-            <Typography
-              onClick={ openSizeGuideDialog }
-              sx={ styles.sizeGuide }
-            >
+            <Typography onClick={ openSizeGuideDialog } sx={ styles.sizeGuide }>
               { t('bikeDetails.sizeGuide') }
             </Typography>
             <StraightenIcon />
