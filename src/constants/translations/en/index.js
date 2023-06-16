@@ -8,6 +8,7 @@ import catalogPage from './catalog-page.json'
 import bikeDetails from './bike-details.json'
 import cart from './cart.json'
 import checkout from './checkout.json'
+import errorPage from './error-page.json'
 
 const en = {
   translations: {
@@ -20,7 +21,8 @@ const en = {
     catalogPage,
     bikeDetails,
     cart,
-    checkout
+    checkout,
+    errorPage
   }
 }
 

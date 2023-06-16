@@ -103,6 +103,7 @@ const CheckoutForm = ({ handleInputChange, handleNonInputValueChange, handleBlur
 
       { titleWithNumber(2, 'Delivery Options') }
       <AsyncAutocomplete
+        fetchOnFocus
         filterOptions={ filterOptions }
         labelField='description'
         onBlur={ handleBlur('city') }

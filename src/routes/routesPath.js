@@ -10,6 +10,6 @@ export const routesPath = {
   privacyPolicy: { route: '/privacy-policy' },
   checkout: { route: '/checkout' },
   error: {
-    notFound: { route: '404', path: '/error/404' }
+    notFound: { route: 'error/404', path: '/error/404' }
   }
 }

@@ -1,8 +1,11 @@
 export const addCommas = (number) => {
+  if (!number) {
+    return '0'
+  }
   const numberString = number.toString()
   let startPosition = numberString.length % 3
 
-  if(startPosition === 0) {
+  if (startPosition === 0) {
     startPosition += 3
   }
 

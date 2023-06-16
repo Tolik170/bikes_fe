@@ -1,9 +1,18 @@
-import { useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 
 import AppAutoComplete from '~/components/app-auto-complete/AppAutoComplete'
 import useAxios from '~/hooks/use-axios'
 
-const AsyncAutocomplete = ({ textFieldProps, valueField, labelField, value, service, axiosProps, ...props }) => {
+const AsyncAutocomplete = ({
+  textFieldProps,
+  valueField,
+  labelField,
+  value,
+  service,
+  axiosProps,
+  fetchOnFocus,
+  ...props
+}) => {
   const { loading, response, fetchData } = useAxios({
     service,
     fetchOnMount: false,
@@ -12,9 +21,13 @@ const AsyncAutocomplete = ({ textFieldProps, valueField, labelField, value, serv
   })
 
   useEffect(() => {
-    void fetchData()
+    if(!fetchOnFocus) fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [service])
+
+  const onFocus = useCallback(() => {
+    !response.length && fetchOnFocus && fetchData()
+  }, [response.length, fetchOnFocus, fetchData])
 
   const valueOption = useMemo(
     () => response.find((option) => (valueField ? option[valueField] : option) === value) || null,
@@ -35,6 +48,7 @@ const AsyncAutocomplete = ({ textFieldProps, valueField, labelField, value, serv
       getOptionLabel={ getOptionLabel }
       isOptionEqualToValue={ isOptionEqualToValue }
       loading={ loading }
+      onFocus={ onFocus }
       options={ response }
       textFieldProps={ textFieldProps }
       value={ valueOption }

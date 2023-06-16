@@ -51,7 +51,7 @@ const Cart = () => {
 
       <Box sx={ styles.totalAndBtn }>
         <TitleWithDescription
-          description={ cartItems.length && `$ ${addCommas(getTotalPrice())}` }
+          description={ `$ ${addCommas(getTotalPrice())}` }
           sx={ styles.totalPrice }
           title={ t('cart.total') }
         />
